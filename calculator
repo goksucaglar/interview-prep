@@ -19,7 +19,7 @@ def carpma(num1,num2):
 
 def bolme(num1,num2):
     if num2 == 0:
-        return "Hata:Sıfıra bölünemez."
+        return "HATA:Sıfıra bölünemez."
     return num1/num2
     
 # Tek parametreli işlemler    
@@ -28,13 +28,15 @@ def karesi(num1):
 
 def karekok(num1):
     if num1<0:
-        return "Hata:Negatif sayıların karekökü alınmaz."
+        return "HATA:Negatif sayıların karekökü alınmaz."
     return num1 ** 0.5
 
 print("                              ********** HESAP MAKİNESİ **********")
 print(" ")
 print("            İşlemler:1-Toplama 2-Çıkarma 3-Çarpma 4-Bölme 5-Karesini Alma 6-Kökünü Alma  ")
 print(" ")
+
+
 
 while True:
     try:
@@ -84,10 +86,21 @@ while True:
             continue
         
 print("Sonuç: ", sonuc)
-     devam = input("İşlem yapmaya devam etmek istiyor musunuz? E/H: ").strip().upper()
-     if devam != "E":
-       print("Çıkış")
-       break
+
+while True:
+    devam = input("İşlem yapmaya devam etmek istiyor musunuz? E/H: ").upper()
+    if devam == "e/E":
+        continue
+    elif devam == "h/H":
+        print("Çıkış")
+        exit()
+    else:
+        print("HATA: Lütfen geçerli harfleri giriniz.")
+    break
+
+
+
+
 
 
 
