@@ -90,7 +90,7 @@ print("Sonuç: ", sonuc)
 devam = input("İşlem yapmaya devam etmek istiyor musunuz? E/H: ").strip().upper()
 if devam != "E":
     print("Çıkış")
-    break
+     break
 
 
 
