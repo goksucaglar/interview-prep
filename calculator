@@ -36,8 +36,6 @@ print(" ")
 print("            İşlemler:1-Toplama 2-Çıkarma 3-Çarpma 4-Bölme 5-Karesini Alma 6-Kökünü Alma  ")
 print(" ")
 
-
-
 while True:
     try:
         islem=int(input("Yapmak istediğiniz işlemin numarasını girin: "))
@@ -90,7 +88,6 @@ print("Sonuç: ", sonuc)
 devam = input("İşlem yapmaya devam etmek istiyor musunuz? E/H: ").strip().upper()
 if devam != "E":
     print("Çıkış")
-     break
 
 
 
