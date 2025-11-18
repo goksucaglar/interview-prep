@@ -92,7 +92,7 @@ while True:
     # Sonucu yazdır
     print("Sonuç:", sonuc)
 
-    # Devam etmek?
+    # Devam etmek
     while True:
         devam = input("İşlem yapmaya devam etmek istiyor musunuz? E/H: ").upper()
         if devam == "E":
