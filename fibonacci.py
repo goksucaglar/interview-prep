@@ -51,12 +51,13 @@
 # O(N log N)-> LINEARITHMIC Complexity: Bir algoritmanın çalışma süresinin N ve log N'in çarpımı oranında arttığını söyler. 
 #        N: elemanların sayısı(iş miktarı artıyor), log N: her adımda parçalama/kıyaslama sürecini gösteriyor. İki şey birlikte büyüyor-> linearithmic 
 #        Örnek: Bir listeyi sıralamak (Timsort, Quick sort, Heap Sort, Merge Sort)     -Hem lineer büyüyen iş miktarı hem de logaritmik büyüyen bölünmeler içeren zaman karmaşıklığı.-
-
-#recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
+#
+#Özet: Big O hesaplaması için recursive ilişkileri çözmek gerekir.
+#
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Fibonacci: Her bir terimin kendinden bir önceki ve iki önceki teriminin toplamı. İlk iki terimin 1 olduğunu belirleriz. 
 #            Base case n<=2 olması ve 1 döner. n>2 olduğunda recursive fonk. her bir çağırmada base case'e inene kadar çalışır.
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 #recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
 
