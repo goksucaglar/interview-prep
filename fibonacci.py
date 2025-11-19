@@ -57,17 +57,39 @@
 #            Base case n<=2 olması ve 1 döner. n>2 olduğunda recursive fonk. her bir çağırmada base case'e inene kadar çalışır.
 
 
+
+#recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
+
+#recursive ile fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
 # fibonacci dizi: 1,1,2,3,5,8,11
-n = int(input("kaçıncı fibonacci sayısını istiyorsunuz?: ")
+n = int(input("sayı giriniz: "))
 
-def fibonacci(n):
-  if n<=2:
-    return 1
+def fibonacci(n, onceki=1, suanki=1):
+  if n <= 2:
+    return suanki
   else:
-    return fibonacci(n-1) + fibonacci(n-2)
-          
+    return fibonacci(n-1, onceki + suanki)
+
+# | n | onceki | suAnki | Toplam = onceki + suAnki |
+# | - | ------ | ------ | ------------------------ |
+# | 6 | 1      | 1      | 2 → yeni suAnki olacak   |
+# | 5 | 1      | 2      | 3 → yeni suAnki          |
+# | 4 | 2      | 3      | 5 → yeni suAnki          |
+# | 3 | 3      | 5      | 8 → yeni suAnki          |
+# | 2 | 5      | 8      | Dur → sonucu ver: 8      |
 
 
+#recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
+#iteratif yani döngüyle
+n = int(input("sayı giriniz: "))
+        
+onceki = 1
+suanki = 1
+
+for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
+  yeni = onceki + suanki
+  onceki = suanki #ikinci sayı birincinin yerine geçer
+  suanki = yeni #toplam sonucu şuanki yerine geçer
 
 
 
