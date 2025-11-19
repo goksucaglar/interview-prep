@@ -103,4 +103,4 @@ while True:
         else:
             print("HATA: Lütfen geçerli harfleri giriniz.")
 
-#Bitiş 19.11.2025
+#Bitiş 19.11.2025, Çarşamba
