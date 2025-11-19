@@ -73,6 +73,8 @@ def fibonacci(n, onceki=1, suanki=1):
     return suanki
   else:
     return fibonacci(n-1, suanki, onceki + suanki)
+    
+print(fibonacci(n))
 
 # | n | onceki | suanki | Toplam = onceki + suanki |
 # | - | ------ | ------ | ------------------------ |
