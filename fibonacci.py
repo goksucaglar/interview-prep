@@ -63,7 +63,7 @@
 #recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
 
 #recursive ile fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
-# fibonacci dizi: 1,1,2,3,5,8,11
+# fibonacci dizi: 1,1,2,3,5,8,13
 
 n = int(input("sayı giriniz: "))
 
