@@ -98,15 +98,15 @@ onceki = 1
 suanki = 1
 
 if n == 1:
-  print(onceki)
+    print(onceki)
 elif n == 2:
-  print(suanki)
+    print(suanki)
 else:
-  for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
-    yeni = onceki + suanki
-    onceki = suanki #ikinci sayı birincinin yerine geçer
-    suanki = yeni #toplam sonucu şuanki yerine geçer
-  print(suanki)
+    for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
+      yeni = onceki + suanki
+      onceki = suanki #ikinci sayı birincinin yerine geçer
+      suanki = yeni #toplam sonucu şuanki yerine geçer
+    print(suanki)
   
 #Döngü ile adım adım hesaplıyor, fonksiyon kendini çağırmıyor.
 #Sadece 3 değişken ile ilerliyor, hafıza kullanımı çok düşük, büyük n için çok hızlı.
