@@ -97,4 +97,4 @@ for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
 
 #Döngü ile adım adım hesaplıyor, fonksiyon kendini çağırmıyor.
 #Sadece 3 değişken ile ilerliyor, hafıza kullanımı çok düşük, büyük n için çok hızlı.
-
+#Performans: Döngü (iteratif) yöntem genellikle daha hızlı ve güvenli, büyük sayılar için tercih edilir.
