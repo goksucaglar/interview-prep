@@ -55,7 +55,7 @@
 #recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
 # Fibonacci: Her bir terimin kendinden bir önceki ve iki önceki teriminin toplamı. İlk iki terimin 1 olduğunu belirleriz. 
 #            Base case n<=2 olması ve 1 döner. n>2 olduğunda recursive fonk. her bir çağırmada base case'e inene kadar çalışır.
-
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 #recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
@@ -78,6 +78,10 @@ def fibonacci(n, onceki=1, suanki=1):
 # | 3 | 3      | 5      | 8 → yeni suAnki          |
 # | 2 | 5      | 8      | Dur → sonucu ver: 8      |
 
+#Fonksiyon kendini tekrar tekrar çağırıyor.
+#Dezavantajı: Çok büyük n için çağrı sayısı fazla olabilir, stack memory dolabilir.
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
 #iteratif yani döngüyle
@@ -91,8 +95,8 @@ for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
   onceki = suanki #ikinci sayı birincinin yerine geçer
   suanki = yeni #toplam sonucu şuanki yerine geçer
 
-
-
+#Döngü ile adım adım hesaplıyor, fonksiyon kendini çağırmıyor.
+#Sadece 3 değişken ile ilerliyor, hafıza kullanımı çok düşük, büyük n için çok hızlı.
 
 
 
