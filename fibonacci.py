@@ -52,7 +52,8 @@
 #        N: elemanların sayısı(iş miktarı artıyor), log N: her adımda parçalama/kıyaslama sürecini gösteriyor. İki şey birlikte büyüyor-> linearithmic 
 #        Örnek: Bir listeyi sıralamak (Timsort, Quick sort, Heap Sort, Merge Sort)     -Hem lineer büyüyen iş miktarı hem de logaritmik büyüyen bölünmeler içeren zaman karmaşıklığı.-
 #
-#Özet: Big O hesaplaması için recursive ilişkileri çözmek gerekir.
+#Özet: Big O hesaplaması için recursive ilişkileri çözmek gerekir.Recursive ile problemi daha küçük alt problemlere böleriz, bu da işin nasıl büyüdüğünü matematiksel olarak ifade etmemizi kolaylaştırır.
+#Recursive Big O’yu kolaylaştırır ama algoritmanın kendisi zaman karmaşıklığını artırabilir.
 #
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Fibonacci: Her bir terimin kendinden bir önceki ve iki önceki teriminin toplamı. İlk iki terimin 1 olduğunu belirleriz. 
