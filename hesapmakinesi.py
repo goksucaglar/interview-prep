@@ -102,3 +102,5 @@ while True:
             exit()
         else:
             print("HATA: Lütfen geçerli harfleri giriniz.")
+
+#Bitiş 20.11.2025
