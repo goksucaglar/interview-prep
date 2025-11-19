@@ -52,6 +52,20 @@
 #        N: elemanların sayısı(iş miktarı artıyor), log N: her adımda parçalama/kıyaslama sürecini gösteriyor. İki şey birlikte büyüyor-> linearithmic 
 #        Örnek: Bir listeyi sıralamak (Timsort, Quick sort, Heap Sort, Merge Sort)     -Hem lineer büyüyen iş miktarı hem de logaritmik büyüyen bölünmeler içeren zaman karmaşıklığı.-
 
+#recursive ve recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
+# Fibonacci: Her bir terimin kendinden bir önceki ve iki önceki teriminin toplamı. İlk iki terimin 1 olduğunu belirleriz. 
+#            Base case n<=2 olması ve 1 döner. n>2 olduğunda recursive fonk. her bir çağırmada base case'e inene kadar çalışır.
+
+
+# fibonacci dizi: 1,1,2,3,5,8,11
+n = int(input("kaçıncı fibonacci sayısını istiyorsunuz?: ")
+
+def fibonacci(n):
+  if n<=2:
+    return 1
+  else:
+    return fibonacci(n-1) + fibonacci(n-2)
+          
 
 
 
