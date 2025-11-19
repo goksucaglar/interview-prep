@@ -67,17 +67,19 @@
 n = int(input("sayı giriniz: "))
 
 def fibonacci(n, onceki=1, suanki=1):
-  if n <= 2:
+  if n == 1:
+    return onceki
+  if n == 2:
     return suanki
   else:
-    return fibonacci(n-1, onceki + suanki)
+    return fibonacci(n-1, suanki, onceki + suanki)
 
-# | n | onceki | suAnki | Toplam = onceki + suAnki |
+# | n | onceki | suanki | Toplam = onceki + suanki |
 # | - | ------ | ------ | ------------------------ |
-# | 6 | 1      | 1      | 2 → yeni suAnki olacak   |
-# | 5 | 1      | 2      | 3 → yeni suAnki          |
-# | 4 | 2      | 3      | 5 → yeni suAnki          |
-# | 3 | 3      | 5      | 8 → yeni suAnki          |
+# | 6 | 1      | 1      | 2 → yeni suanki olacak   |
+# | 5 | 1      | 2      | 3 → yeni suanki          |
+# | 4 | 2      | 3      | 5 → yeni suanki          |
+# | 3 | 3      | 5      | 8 → yeni suanki          |
 # | 2 | 5      | 8      | Dur → sonucu ver: 8      |
 
 #Fonksiyon kendini tekrar tekrar çağırıyor.
