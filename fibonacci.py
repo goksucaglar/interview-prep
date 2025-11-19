@@ -97,9 +97,9 @@ n = int(input("sayı giriniz: "))
 onceki = 1
 suanki = 1
 
-if n==1:
+if n == 1:
   print(onceki)
-elif n==2:
+elif n == 2:
   print(suanki)
 else:
   for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
