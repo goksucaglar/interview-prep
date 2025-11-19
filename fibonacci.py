@@ -97,6 +97,7 @@ for i in range(n-2): #n-2 çünkü 2 sayı zaten hazır -onceki ve suanki-
   onceki = suanki #ikinci sayı birincinin yerine geçer
   suanki = yeni #toplam sonucu şuanki yerine geçer
 
+Bitiş 20.11.2025, 00.45
 #Döngü ile adım adım hesaplıyor, fonksiyon kendini çağırmıyor.
 #Sadece 3 değişken ile ilerliyor, hafıza kullanımı çok düşük, büyük n için çok hızlı.
 #Performans: Döngü (iteratif) yöntem genellikle daha hızlı ve güvenli, büyük sayılar için tercih edilir.
