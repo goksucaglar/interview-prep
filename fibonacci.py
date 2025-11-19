@@ -92,6 +92,7 @@ print(fibonacci(n))
 
 #recursive olmayan fibonaccinin kullanıcıdan alınan n. elamanını bulan kod
 #iteratif yani döngüyle
+# fibonacci dizi: 1,1,2,3,5,8,13
 n = int(input("sayı giriniz: "))
         
 onceki = 1
