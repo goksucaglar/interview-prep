@@ -63,8 +63,8 @@ print(" ")
 def tkm(sayi):
   kullanici = sayi
   bot = random.randint(1,3)
-
-  secimler = {1: "Taş", 2: "Kağıt", 3: "Makas" }
+  #Seçimler kısmının if içinde olması
+  secimler = {1: "Taş", 2: "Kağıt", 3: "Makas" }  #Bu da çalışır, ama her fonksiyon çağrısında sözlük yeniden oluşturulur, gereksiz bir işlem olur. Bu küçük bir performans farkıdır ama oyunda farkedilmez.
   print("Kullanıcı:", secimler[kullanici])
   print("Bot:", secimler[bot])
 
