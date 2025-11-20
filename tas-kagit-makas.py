@@ -6,6 +6,7 @@
 import random
 
 print("1-Taş 2-Kağıt 3-Makas")
+print(" ")
 sayi = int(input("Sayı giriniz: "))
 
 def tkm(sayi):
@@ -15,11 +16,11 @@ def tkm(sayi):
     print("Kullanıcı:", kullanici)
     print("Bot:", bot)
     if kullanici == bot:
-      print("BERABERE")
+      print("SONUÇ: BERABERE")
     elif (kullanici == 1 and bot == 3) or (kullanici == 2 and bot == 1) or (kullanici == 3 and bot == 2):
-        print("KAZANDINIZ")
+        print("SONUÇ: KAZANDINIZ")
     else:
-        print("KAYBETTİNİZ")
+        print("SONUÇ: KAYBETTİNİZ")
     
 tkm(sayi)
 
@@ -27,6 +28,9 @@ tkm(sayi)
 #daha iyi kod
 
 import random
+
+print("-----------------TAŞ-KAĞIT-MAKAS-----------------")
+print(" ")
 
 def tkm(sayi):
   kullanici = sayi
@@ -37,11 +41,11 @@ def tkm(sayi):
   print("Bot:", secimler[bot])
 
   if kullanici == bot:
-    print("Berabere!")
+    print("Sonuç: Berabere!")
   elif (kullanici == 1 and bot == 3) or (kullanici == 2 and bot == 1) or (kullanici == 3 and bot == 2):
-    print("Kazandınız!")
+    print("Sonuç: Kazandınız!")
   else:
-    print("Kaybettiniz!")
+    print("Sonuç: Kaybettiniz!")
 
 sayi = int(input("Sayı giriniz: "))
 tkm(sayi)
