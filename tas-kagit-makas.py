@@ -5,6 +5,8 @@
 
 import random
 
+print("-----------------TAŞ-KAĞIT-MAKAS-----------------")
+print(" ")
 print("1-Taş 2-Kağıt 3-Makas")
 print(" ")
 sayi = int(input("Sayı giriniz: "))
