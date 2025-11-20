@@ -26,6 +26,32 @@ def tkm(sayi):
     
 tkm(sayi)
 
+#düzeltilmiş hali-------------------------------------------------------------------------------------------
+
+import random
+
+print("-----------------TAŞ-KAĞIT-MAKAS-----------------")
+print(" ")
+
+sayi = int(input("Sayı giriniz: "))
+
+secimler = { 1: "Taş", 2: "Kağıt", 3: "Makas" }
+
+def tkm(sayi):
+  if 1 <= sayi <= 3:
+    kullanici = sayi
+    bot = random.randint(1,3)
+    print("Kullanıcı Seçimi: ", secimler[kullanici])
+    print("Bot Seçimi: ", secimler[bot])
+    if (kullanici == 1 and bot == 3) or (kullanici == 2 and bot == 1) or (kullanici == 3 and bot == 2):
+      print("Sonuç: Kazandınız!")
+    elif kullanici == bot:
+      print("Sonuç: Berabere!")
+    else:
+      print("Sonuç: Kaybettiniz!")
+
+tkm(sayi)
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #daha iyi kod
 
