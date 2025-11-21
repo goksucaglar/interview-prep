@@ -2,6 +2,7 @@
 # Bir sınıf (class), kendisinden örnek oluşturulabilen bir nesnedir (object). Bu sınıflara özellik ve yöntemler atanabilir.
 # init method’u ( __init__() Function). Tanımlayacağınız bütün sınıfların __init__() method’u vardır. 
 # Nesne ilk oluşurken __init__() method’u her zaman yürütülür. Bu ilk method çağrıldığında, sizin belirli özellikler ile başlasın dediğiniz özellikler atanır.
+# __init__(...): Bu, sınıfın yapıcı (constructor) metodudur. Bir Kisi nesnesi oluşturulduğunda otomatik olarak çalışan fonksiyondur.
 # Yani bir sınıf içerisinde ilk çalışan method olur kendileri.
 # self.name -> self: Python dilinde geçerli bir terimdir, tanımladığınız sınıfta yer alan herhangi bir değişkene veya diğer method’lara erişmek için selfkullanırız. 
 # Method’lara ve değişkenlere self olmadan erişemezsiniz. 
@@ -12,6 +13,7 @@
 
 class Car:
   def __init__(self, name, type, engine, hp):
+    # Bu satır, parametre olarak gelen isim ve yas değerlerini nesneye ait özelliklere aktarır.
     self.name = name
     self.type = type
     self.engine = engine
