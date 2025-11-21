@@ -1,2 +1,2 @@
 # interview-prep
-Start Date: November 18, 2025
+Start Date: Tuesday, November 18, 2025
