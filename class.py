@@ -3,6 +3,7 @@
 # init method’u ( __init__() Function). Tanımlayacağınız bütün sınıfların __init__() method’u vardır. 
 # Nesne ilk oluşurken __init__() method’u her zaman yürütülür. Bu ilk method çağrıldığında, sizin belirli özellikler ile başlasın dediğiniz özellikler atanır.
 # __init__(...): Bu, sınıfın yapıcı (constructor) metodudur. Bir Kisi nesnesi oluşturulduğunda otomatik olarak çalışan fonksiyondur.
+# Yapıcı (constructor) metodud, bir sınıftan yeni bir nesne oluşturulduğunda otomatik olarak çalışan özel bir fonksiyondur.
 # Yani bir sınıf içerisinde ilk çalışan method olur kendileri.
 # self.name -> self: Python dilinde geçerli bir terimdir, tanımladığınız sınıfta yer alan herhangi bir değişkene veya diğer method’lara erişmek için selfkullanırız. 
 # Method’lara ve değişkenlere self olmadan erişemezsiniz. 
