@@ -9,8 +9,6 @@
 # @staticmethod keyword’ü ile tanımladığınız methodlara, self olmadan erişmek mümkün.
 # self bir sınıf içerisinde iken kullanılır, methodlara ve değişkenlere erişim bununla sağlanır.
 
-# class
-
 class Car:
   def __init__(self, name, type, engine, hp):
     # Bu satır, parametre olarak gelen isim ve yas değerlerini nesneye ait özelliklere aktarır.
