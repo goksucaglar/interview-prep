@@ -25,6 +25,17 @@ car2 = Car("Tofaş", "Basic Car", "LPG", 1600)
 print(car1.name, car1.type, car1.engine, car1.hp, car1.tire_count)
 print(car2.name, car2.type, car2.engine, car2.hp, car2.tire_count)
 
+# örnek
+
+class Kisi:
+  def __init__(self, isim, yas):
+    self.isim = isim
+    self.yas = yas
+  def yazdir(self):
+    print("Merhaba, adım ", self.isim, ", yaşım ", self.yas);
+
+p1 = Kisi("Murat", 36)
+p1.yazdir()
 
 
 # @staticmethod
