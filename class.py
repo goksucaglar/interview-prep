@@ -36,7 +36,10 @@ class araba:
     def durdur():
         print "durdu"
 
-
+# Nesneler oluştuktan sonra belli duruma (state’e) sahip olurlar.
+# Nesneler yine oluşturulduktan itibaren memoryde yer almaya başlarlar.
+# Bir sınıfın birden fazla nesnesi olabilir ve hepsi farklı özellikler gösterirler.
+# Nesneler, sınıflardan oluşturulur ve sınıflar var olmadan var olamazlar. Yani bir sınıftan oluşmayan bir nesne olamaz.
 
 
 
