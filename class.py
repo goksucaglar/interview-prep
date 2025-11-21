@@ -38,6 +38,12 @@ p1 = Kisi("Murat", 36)
 p1.yazdir()
 
 
+# Static method → Nesneye değil, doğrudan sınıfa aittir.
+# Yani böyle çağırılabilir. araba.calistir()
+# Nesne oluşturman gerekmez.
+# Örneğin; Her araba için aynı işlemi yapıyorsa, sadece genel bir işlem yapıyorsa @staticmethod kullanılır.
+# Bir arabanın, kendi rengini, kendi modelini, kendi hızını, kullanıyorsan, o zaman nesnenin özelliklerine ihtiyacın vardır. self kullanırsın.
+
 # @staticmethod
 class araba:
     @staticmethod
@@ -47,6 +53,8 @@ class araba:
     @staticmethod
     def durdur():
         print "durdu"
+
+
 
 # Nesneler oluştuktan sonra belli duruma (state’e) sahip olurlar.
 # Nesneler yine oluşturulduktan itibaren memoryde yer almaya başlarlar.
