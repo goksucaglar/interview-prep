@@ -65,77 +65,77 @@ class araba:
 
 # Üst Sınıf
 class Top:
-  def __init__(self, renk, marka):
-    self.renk = renk
-    self.marka = marka
-  def patla(self):
-    print("{marka} marka ve {renk} renkli top patladı!")
-    # print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
+    def __init__(self, renk, marka):
+      self.renk = renk
+      self.marka = marka
+    def patla(self):
+      print("{marka} marka ve {renk} renkli top patladı!")
+      # print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
 
 
 # Alt Sınıflar
 class BasketTopu(Top):
-  def __init__(self, hava_basinci, basket_sayisi):
-    self.hava_basinci = 100
-    self.basket_sayisi = 0
-  def basket_ol(self):
-    self.basket_sayisi += 1
-    print("Basket Sayısı: ", self.basket_sayisi)
-  def patla(self):
-    self.basket.sayisi = 0
-    print("Basket Sayısı: ", self.basket.sayisi)
+    def __init__(self, hava_basinci, basket_sayisi):
+      self.hava_basinci = 100
+      self.basket_sayisi = 0
+    def basket_ol(self):
+      self.basket_sayisi += 1
+      print("Basket Sayısı: ", self.basket_sayisi)
+    def patla(self):
+      self.basket.sayisi = 0
+      print("Basket Sayısı: ", self.basket.sayisi)
 
 class VoleybolTopu(Top):
-  def __init__(self, agirlik, sayi):
-    self.agirlik = 50
-    self.sayi = 0
-  def sayi_kazan(self):
-    self.sayi += 1
-    print("Kazanılan Sayı: ", self.sayi)
-  def patla(self):
-    self.sayi = 0
-    print("Kazanılan Sayı: ", self.sayi)
+    def __init__(self, agirlik, sayi):
+      self.agirlik = 50
+      self.sayi = 0
+    def sayi_kazan(self):
+      self.sayi += 1
+      print("Kazanılan Sayı: ", self.sayi)
+    def patla(self):
+      self.sayi = 0
+      print("Kazanılan Sayı: ", self.sayi)
 
 class FutbolTopu(Top):
-  def __init__(self, agirlik, gol_sayisi):
-    self.agirlik = 50
-    self.gol_sayisi = 0
-  def gol_ol(self):
-    self.gol_sayisi += 1
-    print("Gol Sayısı: ", self.gol_sayisi)
-  def patla(self):
-    self.gol.sayisi = 0
-    print("Gol Sayısı: ", gol.sayisi)
+    def __init__(self, agirlik, gol_sayisi):
+      self.agirlik = 50
+      self.gol_sayisi = 0
+    def gol_ol(self):
+      self.gol_sayisi += 1
+      print("Gol Sayısı: ", self.gol_sayisi)
+    def patla(self):
+      self.gol.sayisi = 0
+      print("Gol Sayısı: ", gol.sayisi)
 
 # Ana Program
 def main():
-  print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
-  print(" ")
-  secim = int(input("Seçiminiz (1/2/3): "))
-  
-  if secim == "1":
-    hava_basinci = int(input("Hava Basıncı: "))
-    basket_sayisi = int(input("Basket Sayısı: "))
-    top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
-    top.basket_ol()
+    print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
+    print(" ")
+    secim = int(input("Seçiminiz (1/2/3): "))
     
-  elif secim == "2":
-    agirlik = float(input("Ağırlık: "))
-    sayi = int(input("Sayı: "))
-    top = VoleybolTopu(renk, marka, agirlik, sayi)
-    top.sayi_kazan()
-  
-  elif secim == "3":
-    agirlik = float(input("Ağırlık: "))
-    gol_sayisi = int(input("Gol Sayısı: "))
-    top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
-    top.gol_ol()
-  
-  else:
-    print("Geçersiz seçim.")
-    return
-  
-  top.patla()
+    if secim == "1":
+      hava_basinci = int(input("Hava Basıncı: "))
+      basket_sayisi = int(input("Basket Sayısı: "))
+      top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
+      top.basket_ol()
+      
+    elif secim == "2":
+      agirlik = float(input("Ağırlık: "))
+      sayi = int(input("Sayı: "))
+      top = VoleybolTopu(renk, marka, agirlik, sayi)
+      top.sayi_kazan()
+    
+    elif secim == "3":
+      agirlik = float(input("Ağırlık: "))
+      gol_sayisi = int(input("Gol Sayısı: "))
+      top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
+      top.gol_ol()
+    
+    else:
+      print("Geçersiz seçim.")
+      return
+    
+    top.patla()
     
 main()
       
