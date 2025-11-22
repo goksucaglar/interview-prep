@@ -157,17 +157,17 @@ def main():
     elif secim == "3": 
       renk = input("Topun rengi: ") or "Beyaz-Siyah"
       marka = input("Topun markası: ") or "Fenerbahçe"
-      girdi = input("Ağırlık: "))
+      girdi = input("Ağırlık: ")
       agirlik = float(girdi) if girdi else 50
       girdi2 = input("Gol sayısı: ")
-      gol_sayisi = int(girdi2) else 0
+      gol_sayisi = int(girdi2) if girdi2 else 0
       top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
       top.gol_ol()
 
     elif secim == "4": 
       renk = input("Topun rengi: ") or "Beyaz"
       marka = input("Topun markası:") or "MasterCard"
-      girdi1 = input("Ağırlık: ")
+      girdi = input("Ağırlık: ")
       agirlik = float(girdi) if girdi else 30
       # Stringler için or kullanmak güvenli.
       # Sayılar için or kullanmak tehlikeli, if girdi else varsayılan yöntemi gerekir.
