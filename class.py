@@ -62,34 +62,6 @@ class araba:
 # Nesneler, sınıflardan oluşturulur ve sınıflar var olmadan var olamazlar. Yani bir sınıftan oluşmayan bir nesne olamaz.
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-def main():
-  print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
-  print(" ")
-  secim = int(input("Seçiminiz (1/2/3): "))
-  
-
-if secim == "1":
-  hava_basinci = int(input("Hava Basıncı: "))
-  basket_sayisi = int(input("Basket Sayısı: "))
-  top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
-  top.basket_ol()
-  
-elif secim == "2":
-  agirlik = float(input("Ağırlık: "))
-  sayi = int(input("Sayı: "))
-  top = VoleybolTopu(renk, marka, agirlik, sayi)
-  top.sayi_kazan()
-
-elif secim == "3":
-  agirlik = float(input("Ağırlık: "))
-  gol_sayisi = int(input("Gol Sayısı: "))
-  top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
-  top.gol_ol()
-
-else:
-  print("Geçersiz seçim.")
-  return
   
 class Top:
   def __init__(self, renk, marka):
@@ -135,6 +107,37 @@ class FutbolTopu(Top):
   def patla(self):
     self.gol.sayisi = 0
     print("Gol Sayısı: ", gol.sayisi)
+
+def main():
+  print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
+  print(" ")
+  secim = int(input("Seçiminiz (1/2/3): "))
+  
+if secim == "1":
+  hava_basinci = int(input("Hava Basıncı: "))
+  basket_sayisi = int(input("Basket Sayısı: "))
+  top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
+  top.basket_ol()
+  
+elif secim == "2":
+  agirlik = float(input("Ağırlık: "))
+  sayi = int(input("Sayı: "))
+  top = VoleybolTopu(renk, marka, agirlik, sayi)
+  top.sayi_kazan()
+
+elif secim == "3":
+  agirlik = float(input("Ağırlık: "))
+  gol_sayisi = int(input("Gol Sayısı: "))
+  top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
+  top.gol_ol()
+
+else:
+  print("Geçersiz seçim.")
+  return
+
+  top.patla()
+  
+main()
       
     
  
