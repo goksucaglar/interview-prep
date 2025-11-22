@@ -71,7 +71,7 @@ def main():
 
 if secim == "1":
   hava_basinci = int(input("Hava Basıncı: "))
-  basket_sayisi = int(("Basket Sayısı: "))
+  basket_sayisi = int(input("Basket Sayısı: "))
   top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
   top.basket_ol()
   
@@ -89,13 +89,16 @@ elif secim == "3":
 
 else:
   print("Geçersiz seçim.")
+  return
   
 class Top:
   def __init__(self, renk, marka):
     self.renk = renk
     self.marka = marka
   def patla(self):
-    print("f{marka} marka ve {renk} renkli top patladı!")
+    print("{marka} marka ve {renk} renkli top patladı!")
+    # print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
+
     
 
 class BasketTopu(Top):
