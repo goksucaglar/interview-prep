@@ -109,7 +109,7 @@ class FutbolTopu(Top):
       print("Gol Sayısı: ", self.gol_sayisi)
     def patla(self):
       self.gol_sayisi = 0
-      print("Gol Sayısı: ", gol.sayisi)
+      print("Gol Sayısı: ", gol_sayisi)
 
 # 4
 class HentbolTopu(Top):
@@ -125,7 +125,7 @@ class HentbolTopu(Top):
 def main():
     print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
     print(" ")
-    secim = int(input("Seçiminiz (1/2/3): "))
+    secim = input("Seçiminiz (1/2/3): ")
     
     if secim == "1":
       renk = input("Topun rengi: ")
@@ -156,12 +156,12 @@ def main():
       top.gol_ol()
 
     elif secim == "4":
-      renk =
-      marka =
-      agirlik =
-      skor = int(input("Skor: ") 
+      renk = input("Topun rengi: ")
+      marka = input("Topun markası:")
+      agirlik = float(input("Ağırlık: "))
+      skor = int(input("Skor: "))
       top = HentbolTopu(renk, marka, agirlik, skor)
-      top.skor()
+      top.skor_al()
     
     else:
       print("Geçersiz seçim.")
