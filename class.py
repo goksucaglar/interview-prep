@@ -76,9 +76,16 @@ if secim == "1":
   top.basket_ol()
   
 elif secim == "2":
-  
+  agirlik = float(input("Ağırlık: "))
+  sayi = int(input("Sayı: "))
+  top = VoleybolTopu(renk, marka, agirlik, sayi)
+  top.sayi_kazan()
 
 elif secim == "3":
+  agirlik = float(input("Ağırlık: "))
+  gol_sayisi = int(input("Gol Sayısı: "))
+  top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
+  top.gol_ol()
 
 else:
   print("Geçersiz seçim.")
