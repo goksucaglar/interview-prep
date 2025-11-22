@@ -63,44 +63,62 @@ class araba:
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+def main():
+  print("Seçenekler: 1-Futbol, 2-Voleybol, 3-Basketbol")
+  print(" ")
+  sec = int(input("İstediğiniz top türüne göre sayı giriniz: "))
+
+if sec == 1:
+  
+
+else if sec == 2:
+
+else if sec == 3:
+
+else:
+  
 class Top:
-  def __init__(self, renk):
+  def __init__(self, renk, marka):
     self.renk = renk
+    self.marka = marka
+  def patla(self):
+    print("f{marka} marka ve {renk} renkli top patladı!")
+    
 
-  class BasketTopu(Top):
-    def __init__(self, hava_basinci, basket_sayisi):
-      self.hava_basinci = 100
-      self.basket_sayisi = 0
-    def basket_ol(self):
-      self.basket_sayisi += 1
-      print("Basket Sayısı: ", self.basket_sayisi)
-    def patla(self):
-      self.basket.sayisi = 0
-      print("Basket Sayısı: ", self.basket.sayisi)
-
-  
-  class VoleybolTopu(Top):
-    def __init__(self, agirlik, sayi):
-      self.agirlik = 50
-      self.sayi = 0
-    def sayi_kazan(self):
-      self.sayi += 1
-      print("Kazanılan Sayı: ", self.sayi)
-    def patla(self):
-      self.sayi = 0
-      print("Kazanılan Sayı: ", self.sayi)
+class BasketTopu(Top):
+  def __init__(self, hava_basinci, basket_sayisi):
+    self.hava_basinci = 100
+    self.basket_sayisi = 0
+  def basket_ol(self):
+    self.basket_sayisi += 1
+    print("Basket Sayısı: ", self.basket_sayisi)
+  def patla(self):
+    self.basket.sayisi = 0
+    print("Basket Sayısı: ", self.basket.sayisi)
 
   
-  class FutbolTopu(Top):
-      def __init__(self, agirlik, gol_sayisi):
-      self.agirlik = 50
-      self.gol_sayisi = 0
-    def gol_ol(self):
-      self.gol_sayisi += 1
-      print("Gol Sayısı: ", self.gol_sayisi)
-    def patla(self):
-      self.gol.sayisi = 0
-      print("Gol Sayısı: ", gol.sayisi)
+class VoleybolTopu(Top):
+  def __init__(self, agirlik, sayi):
+    self.agirlik = 50
+    self.sayi = 0
+  def sayi_kazan(self):
+    self.sayi += 1
+    print("Kazanılan Sayı: ", self.sayi)
+  def patla(self):
+    self.sayi = 0
+    print("Kazanılan Sayı: ", self.sayi)
+
+  
+class FutbolTopu(Top):
+  def __init__(self, agirlik, gol_sayisi):
+    self.agirlik = 50
+    self.gol_sayisi = 0
+  def gol_ol(self):
+    self.gol_sayisi += 1
+    print("Gol Sayısı: ", self.gol_sayisi)
+  def patla(self):
+    self.gol.sayisi = 0
+    print("Gol Sayısı: ", gol.sayisi)
       
     
  
