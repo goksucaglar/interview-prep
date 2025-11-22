@@ -62,24 +62,53 @@ class araba:
 # Nesneler, sınıflardan oluşturulur ve sınıflar var olmadan var olamazlar. Yani bir sınıftan oluşmayan bir nesne olamaz.
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
-# Top adında bir üst (temel) sınıf tanımlayınız. Bu sınıfta tüm toplar için ortak olabilecek en az bir özellik olsun (örneğin renk, marka vb.) ve patla() adında bir metot bulunsun.
-# Top sınıfından kalıtım alan üç alt sınıf tanımlayınız: BasketTopu, VoleybolTopu ve FutbolTopu. Bu sınıflar için:
+
+class Top:
+  def __init__(self, renk):
+    self.renk = renk
+
+  class BasketTopu(Top):
+    def __init__(self, hava_basinci, basket_sayisi):
+      self.hava_basinci = 100
+      self.basket_sayisi = 0
+    def basket_ol(self):
+      self.basket_sayisi += 1
+      print("Basket Sayısı: ", self.basket_sayisi)
+
+  class VoleybolTopu(Top):
+    
+  
+  class FutbolTopu(Top):
+      def __init__(self, agirlik, gol_sayisi):
+      self.agirlik = 50
+      self.gol_sayisi = 0
+    def gol_ol(self):
+      self.gol_sayisi += 1
+      print("Gol Sayısı: ", self.gol_sayisi)
+    
+  def patla(self):
+
+
+# Top adında bir üst (temel) sınıf tanımlayınız. Bu sınıfta tüm toplar için ortak olabilecek en az bir özellik olsun (örneğin renk, marka vb.) ve patla() adında bir metot bulunsun. 
+# Top sınıfından kalıtım alan üç alt sınıf tanımlayınız: BasketTopu, VoleybolTopu ve FutbolTopu. Bu sınıflar için:    
+    
 # a. BasketTopu sınıfı için:
-# i. hava_basinci ve basket_sayisi adında örnek değişkenleri oluşturunuz.
-# __init__ (constructor) metodunda hava_basinci için sabit bir başlangıç değeri atayınız ve basket_sayisi değişkenine 0 atayınız.
+# i. hava_basinci ve basket_sayisi adında örnek değişkenleri oluşturunuz.    
+# __init__ (constructor) metodunda hava_basinci için sabit bir başlangıç değeri atayınız ve basket_sayisi değişkenine 0 atayınız.    
 # ii. basket_ol() isimli bir metot yazınız. Bu metot basket_sayisi değerini artırmalı ve yeni değeri ekrana yazdırmalıdır.
-# b. VoleybolTopu sınıfı için:
+    
+# b. FutbolTopu sınıfı için:
 # i. agirlik ve gol_sayisi örnek değişkenlerini oluşturunuz.
-# __init__ metodunda agirlik için sabit bir başlangıç değeri atayınız ve gol_sayisi değişkenine 0 atayınız.
+# __init__ metodunda agirlik için sabit bir başlangıç değeri atayınız ve gol_sayisi değişkenine 0 atayınız.  
 # ii. gol_ol() isimli bir metot yazınız. Bu metot gol_sayisi değerini artırmalı ve yeni değeri ekrana yazdırmalıdır.
-# c. FutbolTopu sınıfı için:
+    
+# c. VoleybolTopu sınıfı için: 
 # i. agirlik ve sayi örnek değişkenlerini oluşturunuz.
 # __init__ metodunda agirlik için sabit bir başlangıç değeri atayınız ve sayi değişkenine 0 atayınız.
 # ii. sayi_kazan() isimli bir metot yazınız. Bu metot sayi değerini artırmalı ve yeni değeri ekrana yazdırmalıdır.
+    
 # d. Bu sınıfların __init__ metotlarını (constructor) mutlaka tanımlayınız.
 # Kullanıcıdan alınmayan (giriş yapılmayan) alanlara __init__ içinde uygun varsayılan (default) değerler atayınız.
-
 
 # Oluşturulan sınıflarda (BasketTopu, VoleybolTopu ve FutbolTopu) Top sınıfından miras alınan patla() metodunu override ediniz.
 # Override edilen patla() metodu çalıştığında, ilgili topun tuttuğu sayı değişkeninin (basket_sayisi, gol_sayisi veya sayi) değerini 0 yapmalıdır.
