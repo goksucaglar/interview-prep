@@ -74,9 +74,22 @@ class Top:
     def basket_ol(self):
       self.basket_sayisi += 1
       print("Basket Sayısı: ", self.basket_sayisi)
+    def patla(self):
+      self.basket.sayisi = 0
+      print("Basket Sayısı: ", self.basket.sayisi)
 
+  
   class VoleybolTopu(Top):
-    
+    def __init__(self, agirlik, sayi):
+      self.agirlik = 50
+      self.sayi = 0
+    def sayi_kazan(self):
+      self.sayi += 1
+      print("Kazanılan Sayı: ", self.sayi)
+    def patla(self):
+      self.sayi = 0
+      print("Kazanılan Sayı: ", self.sayi)
+
   
   class FutbolTopu(Top):
       def __init__(self, agirlik, gol_sayisi):
@@ -85,8 +98,12 @@ class Top:
     def gol_ol(self):
       self.gol_sayisi += 1
       print("Gol Sayısı: ", self.gol_sayisi)
+    def patla(self):
+      self.gol.sayisi = 0
+      print("Gol Sayısı: ", gol.sayisi)
+      
     
-  def patla(self):
+ 
 
 
 # Top adında bir üst (temel) sınıf tanımlayınız. Bu sınıfta tüm toplar için ortak olabilecek en az bir özellik olsun (örneğin renk, marka vb.) ve patla() adında bir metot bulunsun. 
