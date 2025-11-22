@@ -64,18 +64,24 @@ class araba:
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def main():
-  print("Seçenekler: 1-Futbol, 2-Voleybol, 3-Basketbol")
+  print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
   print(" ")
-  sec = int(input("İstediğiniz top türüne göre sayı giriniz: "))
-
-if sec == 1:
+  secim = int(input("Seçiminiz (1/2/3): "))
   
 
-else if sec == 2:
+if secim == "1":
+  hava_basinci = int(input("Hava Basıncı: "))
+  basket_sayisi = int(("Basket Sayısı: "))
+  top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
+  top.basket_ol()
+  
+elif secim == "2":
+  
 
-else if sec == 3:
+elif secim == "3":
 
 else:
+  print("Geçersiz seçim.")
   
 class Top:
   def __init__(self, renk, marka):
