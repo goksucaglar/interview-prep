@@ -136,8 +136,10 @@ def main():
       # Kullanıcı "Kırmızı" yazarsa → renk = "Kırmızı"
       # Kullanıcı sadece Enter basarsa → renk = "Turuncu"
       marka = input("Topun markası: ") or "Visa"
-      hava_basinci = int(input("Hava Basıncı: ")) or 100
-      basket_sayisi = int(input("Basket Sayısı: ")) or 0
+      girdi = input("Hava Basıncı: ")
+      hava_basinci = int(girdi) if girdi else 100
+      girdi2 = input("Basket Sayısı: ")
+      basket_sayisi = int(girdi2) if girdi2 else 0
       top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
       top.basket_ol()
       
@@ -145,24 +147,32 @@ def main():
       renk = input("Topun rengi: ") or "Sarı-Mavi"
       # renk = input("Topun rengi: ") or "Sarı-Mavi" böyle de yazılabilir
       marka = input("Topun markası: ") or "İş Bankası"
-      agirlik = float(input("Ağırlık: ")) or "50"
-      sayi = int(input("Sayı: ")) or "0" 
+      girdi = input("Ağırlık: ")
+      agirlik = float(girdi) if girdi else 50
+      girdi2 = input("Sayı: ")
+      sayi = int(girdi2) if girdi2 else 0
       top = VoleybolTopu(renk, marka, agirlik, sayi)
       top.sayi_kazan()
     
     elif secim == "3": 
       renk = input("Topun rengi: ") or "Beyaz-Siyah"
       marka = input("Topun markası: ") or "Fenerbahçe"
-      agirlik = float(input("Ağırlık: ")) or 50
-      gol_sayisi = int(input("Gol Sayısı: ")) or 0
+      girdi = input("Ağırlık: "))
+      agirlik = float(girdi) if girdi else 50
+      girdi2 = input("Gol sayısı: ")
+      gol_sayisi = int(girdi2) else 0
       top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
       top.gol_ol()
 
     elif secim == "4": 
       renk = input("Topun rengi: ") or "Beyaz"
       marka = input("Topun markası:") or "MasterCard"
-      agirlik = float(input("Ağırlık: ")) or 30
-      skor = int(input("Skor: ")) or 0 
+      girdi1 = input("Ağırlık: ")
+      agirlik = float(girdi) if girdi else 30
+      # Stringler için or kullanmak güvenli.
+      # Sayılar için or kullanmak tehlikeli, if girdi else varsayılan yöntemi gerekir.
+      girdi2 = input("Skor: ")
+      skor = int(girdi2) if girdi2 else 0
       top = HentbolTopu(renk, marka, agirlik, skor)
       top.skor_al()
     
