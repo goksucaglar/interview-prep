@@ -84,7 +84,7 @@ class BasketTopu(Top):
       print("Basket Sayısı: ", self.basket_sayisi)
     def patla(self):
       self.basket_sayisi = 0
-      print("Basket Sayısı: ", self.basket_sayisi)
+      print("Top patladı. Basket Sayısı: ", self.basket_sayisi)
 # 2
 class VoleybolTopu(Top):
     def __init__(self, renk = "Sarı-Mavi", marka = "İş Bankası" , agirlik = 50, sayi = 0):
@@ -96,7 +96,7 @@ class VoleybolTopu(Top):
       print("Kazanılan Sayı: ", self.sayi)
     def patla(self):
       self.sayi = 0
-      print("Kazanılan Sayı: ", self.sayi)
+      print("Top patladı. Sayı: ", self.sayi)
 
 # 3
 class FutbolTopu(Top):
@@ -109,7 +109,7 @@ class FutbolTopu(Top):
       print("Gol Sayısı: ", self.gol_sayisi)
     def patla(self):
       self.gol_sayisi = 0
-      print("Gol Sayısı: ", self.gol_sayisi)
+      print("Top patladı. Gol Sayısı: ", self.gol_sayisi)
 
 # 4
 class HentbolTopu(Top):
@@ -120,6 +120,9 @@ class HentbolTopu(Top):
     def skor_al(self):
       self.skor += 1
       print("Skor sayısı: ", self.skor)
+    def patla(self):
+      self.skor = 0
+      print("Top patladı. Skor: ", self.skor)
 
 # Ana Program
 def main():
@@ -128,38 +131,38 @@ def main():
     secim = input("Seçiminiz (1/2/3/4): ")
     
     if secim == "1":
-      renk = input("Topun rengi: ")
-      # renk = input("Topun rengi: ") or "Turuncu"
+      renk = input("Topun rengi: ") or "Turuncu"
+      # Kullanıcı Enter’a basarsa ("") → Python boş string’i False olarak değerlendirir ve "Turuncu" atanır.
       # Kullanıcı "Kırmızı" yazarsa → renk = "Kırmızı"
       # Kullanıcı sadece Enter basarsa → renk = "Turuncu"
-      marka = input("Topun markası: ") 
-      hava_basinci = int(input("Hava Basıncı: "))
-      basket_sayisi = int(input("Basket Sayısı: "))
+      marka = input("Topun markası: ") or "Visa"
+      hava_basinci = int(input("Hava Basıncı: ")) or 100
+      basket_sayisi = int(input("Basket Sayısı: ")) or 0
       top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
       top.basket_ol()
       
     elif secim == "2":
-      renk = input("Topun rengi: ")
+      renk = input("Topun rengi: ") or "Sarı-Mavi"
       # renk = input("Topun rengi: ") or "Sarı-Mavi" böyle de yazılabilir
-      marka = input("Topun markası: ") 
-      agirlik = float(input("Ağırlık: "))
-      sayi = int(input("Sayı: "))
+      marka = input("Topun markası: ") or "İş Bankası"
+      agirlik = float(input("Ağırlık: ")) or "50"
+      sayi = int(input("Sayı: ")) or "0" 
       top = VoleybolTopu(renk, marka, agirlik, sayi)
       top.sayi_kazan()
     
-    elif secim == "3":
-      renk = input("Topun rengi: ") 
-      marka = input("Topun markası: ") 
-      agirlik = float(input("Ağırlık: ")) 
-      gol_sayisi = int(input("Gol Sayısı: ")) 
+    elif secim == "3": 
+      renk = input("Topun rengi: ") or "Beyaz-Siyah"
+      marka = input("Topun markası: ") or "Fenerbahçe"
+      agirlik = float(input("Ağırlık: ")) or 50
+      gol_sayisi = int(input("Gol Sayısı: ")) or 0
       top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
       top.gol_ol()
 
-    elif secim == "4":
-      renk = input("Topun rengi: ")
-      marka = input("Topun markası:")
-      agirlik = float(input("Ağırlık: "))
-      skor = int(input("Skor: "))
+    elif secim == "4": 
+      renk = input("Topun rengi: ") or "Beyaz"
+      marka = input("Topun markası:") or "MasterCard"
+      agirlik = float(input("Ağırlık: ")) or 30
+      skor = int(input("Skor: ")) or 0 
       top = HentbolTopu(renk, marka, agirlik, skor)
       top.skor_al()
     
