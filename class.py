@@ -73,7 +73,9 @@ class Top:
 
 # Alt Sınıflar
 class BasketTopu(Top):
-    def __init__(self, hava_basinci, basket_sayisi):
+    def __init__(self, renk, marka, hava_basinci, basket_sayisi):
+      super().__init__(renk, marka) # Üst sınıfın özelliklerini ekliyor
+      # super() → “Alt sınıfım, üst sınıfın metodunu/özelliğini kullanmak istiyorum” demenin yolu.
       self.hava_basinci = 100
       self.basket_sayisi = 0
     def basket_ol(self):
@@ -84,7 +86,8 @@ class BasketTopu(Top):
       print("Basket Sayısı: ", self.basket.sayisi)
 
 class VoleybolTopu(Top):
-    def __init__(self, agirlik, sayi):
+    def __init__(self, renk, marka, agirlik, sayi):
+      super().__init__(renk, marka)
       self.agirlik = 50
       self.sayi = 0
     def sayi_kazan(self):
@@ -95,7 +98,8 @@ class VoleybolTopu(Top):
       print("Kazanılan Sayı: ", self.sayi)
 
 class FutbolTopu(Top):
-    def __init__(self, agirlik, gol_sayisi):
+    def __init__(self, renk, marka, agirlik, gol_sayisi):
+      super().__init__(renk, marka)
       self.agirlik = 50
       self.gol_sayisi = 0
     def gol_ol(self):
