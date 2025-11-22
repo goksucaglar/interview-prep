@@ -61,9 +61,9 @@ class araba:
 # Bir sınıfın birden fazla nesnesi olabilir ve hepsi farklı özellikler gösterirler.
 # Nesneler, sınıflardan oluşturulur ve sınıflar var olmadan var olamazlar. Yani bir sınıftan oluşmayan bir nesne olamaz.
 
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
 # Top adında bir üst (temel) sınıf tanımlayınız. Bu sınıfta tüm toplar için ortak olabilecek en az bir özellik olsun (örneğin renk, marka vb.) ve patla() adında bir metot bulunsun.
-
-
 # Top sınıfından kalıtım alan üç alt sınıf tanımlayınız: BasketTopu, VoleybolTopu ve FutbolTopu. Bu sınıflar için:
 # a. BasketTopu sınıfı için:
 # i. hava_basinci ve basket_sayisi adında örnek değişkenleri oluşturunuz.
