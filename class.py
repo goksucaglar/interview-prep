@@ -69,9 +69,7 @@ class Top:
       self.renk = renk
       self.marka = marka
     def patla(self):
-      print("{marka} marka ve {renk} renkli top patladı!")
-      # print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
-
+      print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
 
 # Alt Sınıflar
 class BasketTopu(Top):
@@ -134,9 +132,11 @@ def main():
     else:
       print("Geçersiz seçim.")
       return
-    
+
+    # Ortak metodu çağır
     top.patla()
-    
+  
+# Programı başlat
 main()
       
     
