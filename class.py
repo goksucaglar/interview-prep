@@ -72,6 +72,7 @@ class Top:
       print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
 
 # Alt Sınıflar
+# 1
 class BasketTopu(Top):
     def __init__(self, renk = "Turuncu", marka = " Visa ", hava_basinci = 100, basket_sayisi = 0):
       super().__init__(renk, marka) # Üst sınıfın özelliklerini ekliyor
@@ -84,7 +85,7 @@ class BasketTopu(Top):
     def patla(self):
       self.basket_sayisi = 0
       print("Basket Sayısı: ", self.basket_sayisi)
-
+# 2
 class VoleybolTopu(Top):
     def __init__(self, renk = "Sarı-Mavi", marka = "İş Bankası" , agirlik = 50, sayi = 0):
       super().__init__(renk, marka)
@@ -97,6 +98,7 @@ class VoleybolTopu(Top):
       self.sayi = 0
       print("Kazanılan Sayı: ", self.sayi)
 
+# 3
 class FutbolTopu(Top):
     def __init__(self, renk = "Beyaz-Siyah", marka = "Fenerbahçe" , agirlik = 50, gol_sayisi = 0):
       super().__init__(renk, marka)
@@ -109,6 +111,7 @@ class FutbolTopu(Top):
       self.gol_sayisi = 0
       print("Gol Sayısı: ", gol.sayisi)
 
+# 4
 class HentbolTopu(Top):
     def __init__(self, renk = "Beyaz" , marka = "MasterCard", agirlik = 30 , skor = 0):
       super().__init__(renk, marka)
@@ -123,26 +126,42 @@ def main():
     print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
     print(" ")
     secim = int(input("Seçiminiz (1/2/3): "))
-    renk = input("Topun rengi: ")
-    marka = input("Topun markası: ")
     
     if secim == "1":
+      renk = input("Topun rengi: ")
+      # renk = input("Topun rengi: ") or "Turuncu"
+      # Kullanıcı "Kırmızı" yazarsa → renk = "Kırmızı"
+      # Kullanıcı sadece Enter basarsa → renk = "Turuncu"
+      marka = input("Topun markası: ") 
       hava_basinci = int(input("Hava Basıncı: "))
       basket_sayisi = int(input("Basket Sayısı: "))
       top = BasketTopu(renk, marka, hava_basinci, basket_sayisi)
       top.basket_ol()
       
     elif secim == "2":
+      renk = input("Topun rengi: ")
+      # renk = input("Topun rengi: ") or "Sarı-Mavi" böyle de yazılabilir
+      marka = input("Topun markası: ") 
       agirlik = float(input("Ağırlık: "))
       sayi = int(input("Sayı: "))
       top = VoleybolTopu(renk, marka, agirlik, sayi)
       top.sayi_kazan()
     
     elif secim == "3":
-      agirlik = float(input("Ağırlık: "))
-      gol_sayisi = int(input("Gol Sayısı: "))
+      renk = input("Topun rengi: ") 
+      marka = input("Topun markası: ") 
+      agirlik = float(input("Ağırlık: ")) 
+      gol_sayisi = int(input("Gol Sayısı: ")) 
       top = FutbolTopu(renk, marka, agirlik, gol_sayisi)
       top.gol_ol()
+
+    elif secim == "4":
+      renk =
+      marka =
+      agirlik =
+      skor = int(input("Skor: ") 
+      top = HentbolTopu(renk, marka, agirlik, skor)
+      top.skor()
     
     else:
       print("Geçersiz seçim.")
