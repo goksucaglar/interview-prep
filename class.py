@@ -65,7 +65,7 @@ class araba:
 
 # Üst Sınıf
 class Top:
-    def __init__(self, renk, marka):
+    def __init__(self, renk = "Beyaz", marka = "Nike"):
       self.renk = renk
       self.marka = marka
     def patla(self):
@@ -73,7 +73,7 @@ class Top:
 
 # Alt Sınıflar
 class BasketTopu(Top):
-    def __init__(self, renk, marka, hava_basinci, basket_sayisi):
+    def __init__(self, renk = "Turuncu", marka = " Visa ", hava_basinci, basket_sayisi):
       super().__init__(renk, marka) # Üst sınıfın özelliklerini ekliyor
       # super() → “Alt sınıfım, üst sınıfın metodunu/özelliğini kullanmak istiyorum” demenin yolu.
       self.hava_basinci = 100
@@ -82,11 +82,11 @@ class BasketTopu(Top):
       self.basket_sayisi += 1
       print("Basket Sayısı: ", self.basket_sayisi)
     def patla(self):
-      self.basket.sayisi = 0
-      print("Basket Sayısı: ", self.basket.sayisi)
+      self.basket_sayisi = 0
+      print("Basket Sayısı: ", self.basket_sayisi)
 
 class VoleybolTopu(Top):
-    def __init__(self, renk, marka, agirlik, sayi):
+    def __init__(self, renk = "Sarı-Mavi", marka = "İş Bankası" , agirlik, sayi):
       super().__init__(renk, marka)
       self.agirlik = 50
       self.sayi = 0
@@ -98,7 +98,7 @@ class VoleybolTopu(Top):
       print("Kazanılan Sayı: ", self.sayi)
 
 class FutbolTopu(Top):
-    def __init__(self, renk, marka, agirlik, gol_sayisi):
+    def __init__(self, renk = "Beyaz-Siyah", marka = "Fenerbahçe" , agirlik, gol_sayisi):
       super().__init__(renk, marka)
       self.agirlik = 50
       self.gol_sayisi = 0
@@ -106,7 +106,7 @@ class FutbolTopu(Top):
       self.gol_sayisi += 1
       print("Gol Sayısı: ", self.gol_sayisi)
     def patla(self):
-      self.gol.sayisi = 0
+      self.gol_sayisi = 0
       print("Gol Sayısı: ", gol.sayisi)
 
 # Ana Program
@@ -114,6 +114,8 @@ def main():
     print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
     print(" ")
     secim = int(input("Seçiminiz (1/2/3): "))
+    renk = input("Topun rengi: ")
+    marka = input("Topun markası: ")
     
     if secim == "1":
       hava_basinci = int(input("Hava Basıncı: "))
@@ -182,9 +184,6 @@ main()
 
 
 # Alınan bilgilere göre ilgili sınıftan bir nesne oluşturulsun.
-
-
-
 
 # Top sınıfından türeyen yeni bir sınıf daha tanımlayınız (örneğin HentbolTopu).
 # Bu sınıfa kendine özgü en az bir özellik ve metot ekleyerek sınıfı geliştiriniz.
