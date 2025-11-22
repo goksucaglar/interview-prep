@@ -73,11 +73,11 @@ class Top:
 
 # Alt Sınıflar
 class BasketTopu(Top):
-    def __init__(self, renk = "Turuncu", marka = " Visa ", hava_basinci, basket_sayisi):
+    def __init__(self, renk = "Turuncu", marka = " Visa ", hava_basinci = 100, basket_sayisi = 0):
       super().__init__(renk, marka) # Üst sınıfın özelliklerini ekliyor
       # super() → “Alt sınıfım, üst sınıfın metodunu/özelliğini kullanmak istiyorum” demenin yolu.
-      self.hava_basinci = 100
-      self.basket_sayisi = 0
+      self.hava_basinci = hava_basinci
+      self.basket_sayisi = basket_sayisi
     def basket_ol(self):
       self.basket_sayisi += 1
       print("Basket Sayısı: ", self.basket_sayisi)
@@ -86,10 +86,10 @@ class BasketTopu(Top):
       print("Basket Sayısı: ", self.basket_sayisi)
 
 class VoleybolTopu(Top):
-    def __init__(self, renk = "Sarı-Mavi", marka = "İş Bankası" , agirlik, sayi):
+    def __init__(self, renk = "Sarı-Mavi", marka = "İş Bankası" , agirlik = 50, sayi = 0):
       super().__init__(renk, marka)
-      self.agirlik = 50
-      self.sayi = 0
+      self.agirlik = agirlik
+      self.sayi = sayi
     def sayi_kazan(self):
       self.sayi += 1
       print("Kazanılan Sayı: ", self.sayi)
@@ -98,16 +98,25 @@ class VoleybolTopu(Top):
       print("Kazanılan Sayı: ", self.sayi)
 
 class FutbolTopu(Top):
-    def __init__(self, renk = "Beyaz-Siyah", marka = "Fenerbahçe" , agirlik, gol_sayisi):
+    def __init__(self, renk = "Beyaz-Siyah", marka = "Fenerbahçe" , agirlik = 50, gol_sayisi = 0):
       super().__init__(renk, marka)
-      self.agirlik = 50
-      self.gol_sayisi = 0
+      self.agirlik = agirlik
+      self.gol_sayisi = gol_sayisi
     def gol_ol(self):
       self.gol_sayisi += 1
       print("Gol Sayısı: ", self.gol_sayisi)
     def patla(self):
       self.gol_sayisi = 0
       print("Gol Sayısı: ", gol.sayisi)
+
+class HentbolTopu(Top):
+    def __init__(self, renk = "Beyaz" , marka = "MasterCard", agirlik = 30 , skor = 0):
+      super().__init__(renk, marka)
+      self.agirlik = agirlik
+      self.skor = skor
+    def skor_al(self):
+      self.skor += 1
+      print("Skor sayısı: ", skor)
 
 # Ana Program
 def main():
