@@ -62,7 +62,8 @@ class araba:
 # Nesneler, sınıflardan oluşturulur ve sınıflar var olmadan var olamazlar. Yani bir sınıftan oluşmayan bir nesne olamaz.
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  
+
+# Üst Sınıf
 class Top:
   def __init__(self, renk, marka):
     self.renk = renk
@@ -71,8 +72,8 @@ class Top:
     print("{marka} marka ve {renk} renkli top patladı!")
     # print(f"{self.marka} marka ve {self.renk} renkli top patladı!")
 
-    
 
+# Alt Sınıflar
 class BasketTopu(Top):
   def __init__(self, hava_basinci, basket_sayisi):
     self.hava_basinci = 100
@@ -84,7 +85,6 @@ class BasketTopu(Top):
     self.basket.sayisi = 0
     print("Basket Sayısı: ", self.basket.sayisi)
 
-  
 class VoleybolTopu(Top):
   def __init__(self, agirlik, sayi):
     self.agirlik = 50
@@ -96,7 +96,6 @@ class VoleybolTopu(Top):
     self.sayi = 0
     print("Kazanılan Sayı: ", self.sayi)
 
-  
 class FutbolTopu(Top):
   def __init__(self, agirlik, gol_sayisi):
     self.agirlik = 50
@@ -108,6 +107,7 @@ class FutbolTopu(Top):
     self.gol.sayisi = 0
     print("Gol Sayısı: ", gol.sayisi)
 
+# Ana Program
 def main():
   print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
   print(" ")
@@ -135,7 +135,7 @@ def main():
     print("Geçersiz seçim.")
     return
   
-    top.patla()
+  top.patla()
     
 main()
       
