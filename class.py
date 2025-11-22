@@ -109,7 +109,7 @@ class FutbolTopu(Top):
       print("Gol Sayısı: ", self.gol_sayisi)
     def patla(self):
       self.gol_sayisi = 0
-      print("Gol Sayısı: ", gol_sayisi)
+      print("Gol Sayısı: ", self.gol_sayisi)
 
 # 4
 class HentbolTopu(Top):
@@ -119,13 +119,13 @@ class HentbolTopu(Top):
       self.skor = skor
     def skor_al(self):
       self.skor += 1
-      print("Skor sayısı: ", skor)
+      print("Skor sayısı: ", self.skor)
 
 # Ana Program
 def main():
-    print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu")
+    print("Seçenekler: 1-Basketbol Topu, 2-Voleybol Topu, 3-Futbol Topu, 4-HentbolTopu")
     print(" ")
-    secim = input("Seçiminiz (1/2/3): ")
+    secim = input("Seçiminiz (1/2/3/4): ")
     
     if secim == "1":
       renk = input("Topun rengi: ")
