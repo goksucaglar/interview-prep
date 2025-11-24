@@ -47,7 +47,7 @@ x = 5 # dikey başlangıç
 y = 2 # yatay başlangıç (ilk önce satıra bak satır 0,satır 1 -> boş // satır 2 -> 5 boşluk + karakter çizilir)
 # satir_sayisi = 20 # terminal yüksekliği yapabilirdik 
 max_sag = shutil.get_terminal_size().columns - 1 # terminal genişliğini al ve sap sınırı belirle, şuanki boyutunu görür
-max_alt = shutil.get_terminal.size().lines - 1
+max_alt = shutil.get_terminal_size().lines - 1
 # çıktısı .columns ve .lines içerir. 
 # pythonda indexler 0 dan başladığı için - 1
 
@@ -93,8 +93,15 @@ keyboard.add_hotkey('s', asagi)
 keyboard.add_hotkey('a', sol)
 keyboard.add_hotkey('d', sag)
 
+def ekran_temizle():
+  if platform.system() == "Windows":
+    os.system("cls")
+  else: # linux ve mac
+    os.system("clear")
+
 while True: 
-  os.system("cls") # windows için ekranı temizle
+  # os.system("cls") # windows için ekranı temizle
+  ekran_temizle()
   karakter_ciz() # karakteri yeni konumda çiz
   if keyboard.is_pressed('esc'): # esc ile çıkış
     break
