@@ -123,7 +123,6 @@ y = 2
 max_sag = shutil.get_terminal_size().columns - 1 
 max_alt = shutil.get_terminal_size().lines - 1
 
-
 def yukari():
   global y 
   y -= 1
@@ -154,6 +153,7 @@ def karakter_ciz():
       print(" " * x + karakter) 
     else:
       print() 
+      
 keyboard.add_hotkey('w', yukari)
 keyboard.add_hotkey('s', asagi)
 keyboard.add_hotkey('a', sol)
