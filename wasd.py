@@ -32,43 +32,19 @@ import time
 keyboard.press('up')
 time.sleep(0.1)
 keyboard.release('up')
-
-# kısayolu
-
-import os # sistem komutları için gerekli 
-import platform # işletim sistemini öğrenmek için kullanılır linux/mac mi windows mu
-import keyboard
-import time
-
 keyboard.press_and_release('up')
 
 # K O D -----------------------------------------------------------------------------------------------------------------------
 
-karakter = input("Karakterimiz: ")
+import os # sistem komutları için gerekli 
+import keyboard
+import time
+# import platform: işletim sistemini öğrenmek için kullanılır linux/mac mi windows mu ona bakmamızı sağlar
 
+karakter = input("Karakterimiz: ")
 x = 3 # dikey başlangıç
 y = 3 # yatay başlangıç
-
 satir_sayisi = 20 # terminal yüksekliği
-
-keyboard.add_hotkey('w', yukari)
-keyboard.add_hotkey('s', asagi)
-keyboard.add_hotkey('a', sol)
-keyboard.add_hotkey('d', sag)
-
-def karakter_ciz():
-  for i in range(satir_sayisi): # 0 dan 19 a kadar 20 satır yazma komutu
-    if i == y: # döngü satırı y konumuna eşitse
-      print(" " * x + karakter) # x kadar boşluk + karakter
-    else:
-      print() # boş satır 
-
-while True: 
-  os.system("cls") # windows için ekranı temizle
-  karakter_ciz() # karakteri yeni konumda çiz
-  if keyboard.is_pressed('esc'): # esc ile çıkış
-    break
-  time.sleep(0.05) # cpu'yu yormamak için kısa bekleme
 
 def yukari():
   global y # python içindeki bir fonksiyona dışardaki değişkeni çağırmak için global gerekir.
@@ -93,6 +69,28 @@ def sol():
   x -= 1
   if x < 0: # karakter en soldaysa 0 olur, sol sınır
     x = 0
+
+def karakter_ciz():
+  for i in range(satir_sayisi): # 0 dan 19 a kadar 20 satır yazma komutu
+    if i == y: # döngü satırı y konumuna eşitse
+      print(" " * x + karakter) # x kadar boşluk + karakter
+    else:
+      print() # boş satır 
+
+keyboard.add_hotkey('w', yukari)
+keyboard.add_hotkey('s', asagi)
+keyboard.add_hotkey('a', sol)
+keyboard.add_hotkey('d', sag)
+
+while True: 
+  os.system("cls") # windows için ekranı temizle
+  karakter_ciz() # karakteri yeni konumda çiz
+  if keyboard.is_pressed('esc'): # esc ile çıkış
+    break
+  time.sleep(0.05) # cpu'yu yormamak için kısa bekleme
+
+
+
   
   
 
