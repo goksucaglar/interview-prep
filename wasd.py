@@ -107,9 +107,72 @@ while True:
     break
   time.sleep(0.05) # cpu'yu yormamak için kısa bekleme
 
+# TEMİZ KOD -----------------------------------------------------------
+
+import os 
+import keyboard
+import time
+import shutil 
+import platform 
+
+karakter = input("Karakterimiz: ")
+
+x = 5 
+y = 2 
+
+max_sag = shutil.get_terminal_size().columns - 1 
+max_alt = shutil.get_terminal_size().lines - 1
 
 
-  
+def yukari():
+  global y 
+  y -= 1
+  if y < 0: 
+    y = 0 
+ 
+def asagi():
+  global y
+  y += 1
+  if y > max_alt:
+    y = max_alt
+    
+def sag():
+  global x 
+  x += 1 
+  if x > max_sag: 
+    x = max_sag
+
+def sol():
+  global x
+  x -= 1
+  if x < 0: 
+    x = 0
+
+def karakter_ciz(): 
+  for i in range(max_alt + 1): 
+    if i == y: 
+      print(" " * x + karakter) 
+    else:
+      print() 
+keyboard.add_hotkey('w', yukari)
+keyboard.add_hotkey('s', asagi)
+keyboard.add_hotkey('a', sol)
+keyboard.add_hotkey('d', sag)
+
+def ekran_temizle():
+  if platform.system() == "Windows":
+    os.system("cls")
+  else: # linux ve mac
+    os.system("clear")
+
+while True: 
+  ekran_temizle()
+  karakter_ciz() 
+  if keyboard.is_pressed('esc'): 
+    break
+  time.sleep(0.05) 
+ 
+# Bitiş 25.11.2025, 02:00, Salı
   
 
 
