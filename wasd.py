@@ -39,12 +39,20 @@ keyboard.press_and_release('up')
 import os # sistem komutları için gerekli 
 import keyboard
 import time
+import shutil # terminal genişlik - yükseklik değerlerini almamız için lazım, asıl amacı dosya ve klasör işleme
 # import platform: işletim sistemini öğrenmek için kullanılır linux/mac mi windows mu ona bakmamızı sağlar
 
 karakter = input("Karakterimiz: ")
 x = 3 # dikey başlangıç
 y = 3 # yatay başlangıç
 satir_sayisi = 20 # terminal yüksekliği
+max_sag = shutil.get_terminal_size().columns - 1 # terminal genişliğini al ve sap sınırı belirle, şuanki boyutunu görür
+# çıktısı .columns ve .lines içerir. 
+# pythonda indexler 0 dan başladığı için - 1
+
+# boyut = shutil.get_terminal_size()
+# print(boyut.columns)
+# print(boyut.lines)
 
 def yukari():
   global y # python içindeki bir fonksiyona dışardaki değişkeni çağırmak için global gerekir.
@@ -60,9 +68,9 @@ def asagi():
     
 def sag():
   global x 
-  x += 1 # sağ tarafta bir sınır olmadığı için if kullanmadık ama yine de varmış gibi yazacağım
-  if x > 50: # sağ sınır
-    x = 50
+  x += 1 # sağ tarafta bir sınır koymamız için terminalin uzunluğunu alacağız
+  if x > max_sag: # sağ sınır
+    x = max_sag
 
 def sol():
   global x
