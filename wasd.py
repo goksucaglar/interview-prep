@@ -43,10 +43,11 @@ import shutil # terminal genişlik - yükseklik değerlerini almamız için laz�
 # import platform: işletim sistemini öğrenmek için kullanılır linux/mac mi windows mu ona bakmamızı sağlar
 
 karakter = input("Karakterimiz: ")
-x = 3 # dikey başlangıç
-y = 3 # yatay başlangıç
-satir_sayisi = 20 # terminal yüksekliği
+x = 5 # dikey başlangıç 
+y = 2 # yatay başlangıç (ilk önce satıra bak satır 0,satır 1 -> boş // satır 2 -> 5 boşluk + karakter çizilir)
+# satir_sayisi = 20 # terminal yüksekliği yapabilirdik 
 max_sag = shutil.get_terminal_size().columns - 1 # terminal genişliğini al ve sap sınırı belirle, şuanki boyutunu görür
+max_alt = shutil.get_terminal.size().lines - 1
 # çıktısı .columns ve .lines içerir. 
 # pythonda indexler 0 dan başladığı için - 1
 
@@ -63,8 +64,10 @@ def yukari():
 def asagi():
   global y
   y += 1
-  if y > satir_sayisi - 1: # karakterin ekranın altından dışarı çıkmasını engeller.
-    y = satir_sayisi - 1 # 0 dan 19 a kadar olduğu için, 20 - 1 = 19, range(20), alt sınır
+  # if y > satir_sayisi - 1: # karakterin ekranın altından dışarı çıkmasını engeller.
+    # y = satir_sayisi - 1 # 0 dan 19 a kadar olduğu için, 20 - 1 = 19, range(20), alt sınır
+  if y > max_alt:
+    y = max_alt
     
 def sag():
   global x 
@@ -78,10 +81,10 @@ def sol():
   if x < 0: # karakter en soldaysa 0 olur, sol sınır
     x = 0
 
-def karakter_ciz():
-  for i in range(satir_sayisi): # 0 dan 19 a kadar 20 satır yazma komutu
+def karakter_ciz(): # tüm satırları gezer 
+  for i in range(max_alt + 1): # 0 dan başlıyor + 1 o yüzden, önce y yani hangi satırda olacağına bakıyoruz sonra x kadar sağa kaydır
     if i == y: # döngü satırı y konumuna eşitse
-      print(" " * x + karakter) # x kadar boşluk + karakter
+      print(" " * x + karakter) # x kadar boşluk + karakter, x kadar sağa kaydırıyoruz 
     else:
       print() # boş satır 
 
