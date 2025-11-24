@@ -40,7 +40,7 @@ import os # sistem komutları için gerekli
 import keyboard
 import time
 import shutil # terminal genişlik - yükseklik değerlerini almamız için lazım, asıl amacı dosya ve klasör işleme
-# import platform: işletim sistemini öğrenmek için kullanılır linux/mac mi windows mu ona bakmamızı sağlar
+import platform # işletim sistemini öğrenmek için kullanılır linux/mac mi windows mu ona bakmamızı sağlar
 
 karakter = input("Karakterimiz: ")
 x = 5 # dikey başlangıç 
