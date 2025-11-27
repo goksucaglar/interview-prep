@@ -149,20 +149,20 @@ while True:
     yılan[0].dx = 1
     yılan[0].dy = 0
     
-# Gövdenin takip etmesi
-for i in range(len(yılan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
-  yılan[i].x = yılan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
-  yılan[i].y = yılan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
-
-# headi hareket ettirme
-yılan[0].hareket()
-
-# yem yendi mi?
-if yılan[0].x == food.x and yılan[0].y == food.y:
-  yılan.append(Snake(yılan[-1].x, yılan[-1].y)) # büyüme
-  food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
-
-# hız
-time.sleep(0.1)
+  # Gövdenin takip etmesi
+  for i in range(len(yılan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
+    yılan[i].x = yılan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
+    yılan[i].y = yılan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
+  
+  # headi hareket ettirme
+  yılan[0].hareket()
+  
+  # yem yendi mi?
+  if yılan[0].x == food.x and yılan[0].y == food.y:
+    yılan.append(Snake(yılan[-1].x, yılan[-1].y)) # büyüme
+    food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
+  
+  # hız
+  time.sleep(0.1)
 
 
