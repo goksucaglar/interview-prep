@@ -7,17 +7,20 @@
 import os
 import time
 import random
+import keyboard
 
-class Obje:
+class Snake:
   def __init__(self, x, y):
     self.x = x
     self.y = y
+    self.dx = 1
+    self.dy = 0
 
   def hareket(self):
-    self.x += dx
-    self.y += dy
+    self.x += self.dx
+    self.y += self.dy
 
-kare = Obje(50, 50) # obje başlangıçta 50,50 koordinatında
+yılan = [Snake(50, 50), Snake(49,50), Snake(48,50)] # ilk parça head
 
 # for y in range(600):
   # satır = [] # her satır için boş bir liste oluşturma
@@ -43,13 +46,27 @@ alan[kare.y][kare.x] = 1 # 1 = obje, obje alan içine kondu
 #    print(i)
 # Burada i her seferinde 0,1,2,3,4 değerini alır ve kullanılabilir.
 
-def yeni_yem():
-  return random.randint(0,599), random.randint(0,599)
+while True:
+  if keyboard.is_pressed("w"):
+    yılan[0].dx = 0
+    yılan[0].dy = -1
+  elif keyboard.is_pressed("a"):
+    yılan[0].dx = -1
+    yılan[0].dy = 0
+  elif keyboard.is_pressed("s"):
+    yılan[0].dx = 0
+    yılan[0].dy = 1
+  elif keyboard.is_pressed("d"):
+    yılan[0].dx = 1
+    yılan[0].dy = 0
 
-yem_x, yem_y = yeni_yem()
-# yem_x → fonksiyondan dönen ilk değer (x koordinatı)
-# yem_y → fonksiyondan dönen ikinci değer (y koordinatı)
-
-
+class Food():
+  def __init__(self):
+    self.x, self.y = self.yeni_yem()
+    
+  def yeni_yem(self):
+    self.x = random.randint(0,599)
+    self.y = random.randint(0,599)
+    return self.x, self.y
 
 
