@@ -4,30 +4,44 @@
 # ve yeni yem çıksın bunlari classlarda tut dinamik bir şekilde 
 # objemiz büyüsün ve her bir parçasının konumu dinamik olarak yerini tutsun
 
+# 1
 import os
 import time
 import random
 import keyboard
 
+# 2
 class Snake:
   def __init__(self, x, y):
     self.x = x
     self.y = y
-    self.dx = 1
+    self.dx = 1 # başlangıç yönü
     self.dy = 0
 
   def hareket(self):
     self.x += self.dx
     self.y += self.dy
 
-yılan = [Snake(50, 50), Snake(49,50), Snake(48,50)] # ilk parça head
+# 3
+class Food():
+  def __init__(self):
+    self.x, self.y = self.yeni_yem()
+    
+  def yeni_yem(self):
+    self.x = random.randint(0,599)
+    self.y = random.randint(0,599)
+    return self.x, self.y
 
-# for y in range(600):
-  # satır = [] # her satır için boş bir liste oluşturma
-  # for x in range(600):
-    # satir.append(0)
-#  alan.append(satir)
+# 4
+yılan = [Snake(50, 50), # ilk parça head
+         Snake(49,50), 
+         Snake(48,50)
+] 
 
+# 5
+food = Food()
+
+# 6
 alan = [[0 for _ in range(600)] for _ in range(600)] # içteki kod sütun, dıştaki satır, baştaki tüm alan 0 yani boş, 600x600 alan
 alan[kare.y][kare.x] = 1 # 1 = obje, obje alan içine kondu
 
@@ -46,6 +60,7 @@ alan[kare.y][kare.x] = 1 # 1 = obje, obje alan içine kondu
 #    print(i)
 # Burada i her seferinde 0,1,2,3,4 değerini alır ve kullanılabilir.
 
+# 7
 while True:
   if keyboard.is_pressed("w"):
     yılan[0].dx = 0
@@ -59,24 +74,23 @@ while True:
   elif keyboard.is_pressed("d"):
     yılan[0].dx = 1
     yılan[0].dy = 0
-
-yılan[0].hareket()
-
+    
+# Gövdenin takip etmesi
 for i in range(len(yılan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
   yılan[i].x = yılan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
   yılan[i].y = yılan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
 
+# headi hareket ettirme
+yılan[0].hareket()
+
+# yem yendi mi?
 if yılan[0].x == food.x and yılan[0].y == food.y:
-  yılan.append(Snake(yılan[-1].x, yılan[-1].y))
+  yılan.append(Snake(yılan[-1].x, yılan[-1].y)) # büyüme
   food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
 
-class Food():
-  def __init__(self):
-    self.x, self.y = self.yeni_yem()
-    
-  def yeni_yem(self):
-    self.x = random.randint(0,599)
-    self.y = random.randint(0,599)
-    return self.x, self.y
+# hız
+time.sleep(0.1)
+
+
 
 
