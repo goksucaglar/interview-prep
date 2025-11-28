@@ -134,15 +134,20 @@ yılan = [Snake(width//2, height//2)]
 food = Food()
 
 # 6
-
-
-
-
-# yilan_var = False
-# for parca in yılan:
-#     if parca.x == x and parca.y == y:
-#         yilan_var = True
-#         break
+def ciz():
+  ekran_temizle()
+  for y in range(height):
+    satir = ""
+    for x in range(width):
+      if x == food.x and y == food.y:
+        satir += "*"
+      elif any(parca.x == x and parca.y == y for parca in yılan): # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?” Eğer varsa → bu karede yılan var demektir.
+        if x == yılan[0].x and y == yılan[0].y: # Eğer o karede yılan varsa, ikinci test devreye girer:
+          satir += "0"  # baş
+        else:
+          satir += "#"  # gövde
+      else:
+        satir += "." 
 
 # 7
 while True:
@@ -171,7 +176,9 @@ while True:
   if yılan[0].x == food.x and yılan[0].y == food.y:
     yılan.append(Snake(yılan[-1].x, yılan[-1].y)) # büyüme
     food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
-  
+
+  ciz()
+
   # hız
   time.sleep(0.1)
 
@@ -180,25 +187,6 @@ def ekran_temizle():
     os.system("cls")
   else:
     os.system("clear")
-
-def ciz():
-  ekran_temizle()
-  for y in range(height):
-    satir = ""
-    for x in range(width):
-      if x == food.x and y == food.y:
-        satir += "*"
-      elif any(parca.x == x and parca.y == y for parca in yılan) # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?” Eğer varsa → bu karede yılan var demektir.
-        if x == yılan[0].x and y == yılan[0].y: # Eğer o karede yılan varsa, ikinci test devreye girer:
-          satir += "0"  # baş
-        else:
-          satir += "#"  # gövde
-      else:
-        satir += "." 
-
-
-
-
 
 # any Python’da çok işe yarayan bir fonksiyondur ve anlamı tam olarak şudur:
 # “İçindeki koşullardan en az biri doğruysa True döner.”
