@@ -137,7 +137,7 @@ def ekran_temizle():
 # 5
 # kendine çarpma kontrolü
 for parca in yılan[1:]:
-  if yılan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir
+  if yılan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
     yılan = [Snake(width//2, height//2)]
     food.x, food.y = food.yeni_yem()
     break
