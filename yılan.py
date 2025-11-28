@@ -15,7 +15,7 @@ class Snake:
   def __init__(self, x, y):
     self.x = x
     self.y = y
-    self.dx = 1 # başlangıç yönü
+    self.dx = 1 # başlangıç yönü sağ taraf, sağ tarafa doğru hareket ediyor
     self.dy = 0
 
   def hareket(self):
@@ -33,7 +33,7 @@ class Food():
     return self.x, self.y
 
 # 4
-yılan = [Snake(50, 50), # ilk parça head
+yılan = [Snake(50,50), # ilk parça head
          Snake(49,50), 
          Snake(48,50)
 ] 
