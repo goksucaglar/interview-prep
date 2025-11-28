@@ -188,13 +188,13 @@ def ciz():
     for x in range(width):
       if x == food.x and y == food.y:
         satir += "*"
-      elif any(parca.x == x and parca.y == y for parca in yılan) # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?”
-        if x == yılan[0].x and y == yılan[0].y:
-          satir += "0"
+      elif any(parca.x == x and parca.y == y for parca in yılan) # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?” Eğer varsa → bu karede yılan var demektir.
+        if x == yılan[0].x and y == yılan[0].y: # Eğer o karede yılan varsa, ikinci test devreye girer:
+          satir += "0"  # baş
         else:
-          satir += "#"
+          satir += "#"  # gövde
       else:
-        satir += "."
+        satir += "." 
 
 
 
