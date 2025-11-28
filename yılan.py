@@ -135,6 +135,14 @@ def ekran_temizle():
     os.system("clear")
 
 # 5
+# kendine çarpma kontrolü
+for parca in yılan[1:]:
+  if yılan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir
+    yılan = [Snake(width//2, height//2)]
+    food.x, food.y = food.yeni_yem()
+    break
+
+# 6
 def ciz():
   ekran_temizle()
   for y in range(height):
@@ -150,13 +158,13 @@ def ciz():
       else:
         satir += "." 
 
-# 6
+# 7
 yılan = [Snake(width//2, height//2)]
 
-# 7
+# 8
 food = Food()
 
-# 8
+# 9
 while True:
   if keyboard.is_pressed("w"):
     yılan[0].dx = 0
