@@ -98,6 +98,11 @@ import os
 import time
 import random
 import keyboard
+import platform
+
+# alan boyutu 
+width = 60
+height = 60
 
 # 2
 class Snake:
@@ -117,22 +122,27 @@ class Food():
     self.x, self.y = self.yeni_yem()
     
   def yeni_yem(self):
-    self.x = random.randint(0,599)
-    self.y = random.randint(0,599)
+    self.x = random.randint(0, width-1)
+    self.y = random.randint(0, height-1)
     return self.x, self.y
+    # return random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1)
 
 # 4
-yılan = [Snake(50, 50), # ilk parça head
-         Snake(49,50), 
-         Snake(48,50)
-] 
+yılan = [Snake(width//2, height//2)]
 
 # 5
 food = Food()
 
 # 6
-alan = [[0 for _ in range(600)] for _ in range(600)] 
-# içteki kod sütun, dıştaki satır, baştaki tüm alan 0 yani boş, 600x600 alan
+
+
+
+
+# yilan_var = False
+# for parca in yılan:
+#     if parca.x == x and parca.y == y:
+#         yilan_var = True
+#         break
 
 # 7
 while True:
@@ -165,4 +175,32 @@ while True:
   # hız
   time.sleep(0.1)
 
+def ekran_temizle():
+  if platform.system() == "Windows":
+    os.system("cls")
+  else:
+    os.system("clear")
 
+def ciz():
+  ekran_temizle()
+  for y in range(height):
+    satir = ""
+    for x in range(width):
+      if x == food.x and y == food.y:
+        satir += "*"
+      elif any(parca.x == x and parca.y == y for parca in yılan) # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?”
+        if x == yılan[0].x and y == yılan[0].y:
+          satir += "0"
+        else:
+          satir += "#"
+      else:
+        satir += "."
+
+
+
+
+
+# any Python’da çok işe yarayan bir fonksiyondur ve anlamı tam olarak şudur:
+# “İçindeki koşullardan en az biri doğruysa True döner.”
+# any([True, False, False]) Sonuç: True
+# any([False, False, False]) Sonuç: False
