@@ -91,7 +91,7 @@ if yılan[0].x == food.x and yılan[0].y == food.y:
 # hız
 time.sleep(0.1)
 
-# TEMİZ KOD ---------------------------------------------------------------------------------------------------------------------
+# TEMİZ KOD -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 1
 import os
@@ -128,12 +128,13 @@ class Food():
     # return random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1)
 
 # 4
-yılan = [Snake(width//2, height//2)]
+def ekran_temizle():
+  if platform.system() == "Windows":
+    os.system("cls")
+  else:
+    os.system("clear")
 
 # 5
-food = Food()
-
-# 6
 def ciz():
   ekran_temizle()
   for y in range(height):
@@ -149,7 +150,13 @@ def ciz():
       else:
         satir += "." 
 
+# 6
+yılan = [Snake(width//2, height//2)]
+
 # 7
+food = Food()
+
+# 8
 while True:
   if keyboard.is_pressed("w"):
     yılan[0].dx = 0
@@ -181,12 +188,6 @@ while True:
 
   # hız
   time.sleep(0.1)
-
-def ekran_temizle():
-  if platform.system() == "Windows":
-    os.system("cls")
-  else:
-    os.system("clear")
 
 # any Python’da çok işe yarayan bir fonksiyondur ve anlamı tam olarak şudur:
 # “İçindeki koşullardan en az biri doğruysa True döner.”
