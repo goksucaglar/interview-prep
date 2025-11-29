@@ -137,8 +137,8 @@ def ekran_temizle():
 # 5
 # kendine çarpma kontrolü
 for parca in yılan[1:]:
-  if yılan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
-    yılan = [Snake(width//2, height//2)]
+  if yilan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
+    yilan = [Snake(width//2, height//2)]
     food.x, food.y = food.yeni_yem()
     break
 
@@ -150,8 +150,8 @@ def ciz():
     for x in range(width):
       if x == food.x and y == food.y:
         satir += "*"
-      elif any(parca.x == x and parca.y == y for parca in yılan): # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?” Eğer varsa → bu karede yılan var demektir.
-        if x == yılan[0].x and y == yılan[0].y: # Eğer o karede yılan varsa, ikinci test devreye girer:
+      elif any(parca.x == x and parca.y == y for parca in yilan): # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?” Eğer varsa → bu karede yılan var demektir.
+        if x == yilan[0].x and y == yilan[0].y: # Eğer o karede yılan varsa, ikinci test devreye girer:
           satir += "0"  # baş
         else:
           satir += "#"  # gövde
@@ -167,29 +167,29 @@ food = Food()
 # 9
 while True:
   if keyboard.is_pressed("w"):
-    yılan[0].dx = 0
-    yılan[0].dy = -1
+    yilan[0].dx = 0
+    yilan[0].dy = -1
   elif keyboard.is_pressed("a"):
-    yılan[0].dx = -1
-    yılan[0].dy = 0
+    yilan[0].dx = -1
+    yilan[0].dy = 0
   elif keyboard.is_pressed("s"):
-    yılan[0].dx = 0
-    yılan[0].dy = 1
+    yilan[0].dx = 0
+    yilan[0].dy = 1
   elif keyboard.is_pressed("d"):
-    yılan[0].dx = 1
-    yılan[0].dy = 0
+    yilan[0].dx = 1
+    yilan[0].dy = 0
     
   # Gövdenin takip etmesi
-  for i in range(len(yılan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
-    yılan[i].x = yılan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
-    yılan[i].y = yılan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
+  for i in range(len(yilan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
+    yilan[i].x = yilan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
+    yilan[i].y = yilan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
   
   # headi hareket ettirme
-  yılan[0].hareket()
+  yilan[0].hareket()
   
   # yem yendi mi?
-  if yılan[0].x == food.x and yılan[0].y == food.y:
-    yılan.append(Snake(yılan[-1].x, yılan[-1].y)) # büyüme
+  if yilan[0].x == food.x and yilan[0].y == food.y:
+    yilan.append(Snake(yilan[-1].x, yilan[-1].y)) # büyüme
     food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
 
   ciz()
