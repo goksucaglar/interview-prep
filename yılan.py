@@ -33,7 +33,7 @@ class Food():
     return self.x, self.y
 
 # 4
-yılan = [Snake(50,50), # ilk parça head
+yilan = [Snake(50,50), # ilk parça head
          Snake(49,50), 
          Snake(48,50)
 ] 
@@ -63,29 +63,29 @@ alan = [[0 for _ in range(600)] for _ in range(600)] # içteki kod sütun, dış
 # 7
 while True:
   if keyboard.is_pressed("w"):
-    yılan[0].dx = 0
-    yılan[0].dy = -1
+    yilan[0].dx = 0
+    yilan[0].dy = -1
   elif keyboard.is_pressed("a"):
-    yılan[0].dx = -1
-    yılan[0].dy = 0
+    yilan[0].dx = -1
+    yilan[0].dy = 0
   elif keyboard.is_pressed("s"):
-    yılan[0].dx = 0
-    yılan[0].dy = 1
+    yilan[0].dx = 0
+    yilan[0].dy = 1
   elif keyboard.is_pressed("d"):
-    yılan[0].dx = 1
-    yılan[0].dy = 0
+    yilan[0].dx = 1
+    yilan[0].dy = 0
     
 # Gövdenin takip etmesi
-for i in range(len(yılan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
-  yılan[i].x = yılan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
-  yılan[i].y = yılan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
+for i in range(len(yilan)-1, 0, -1): # range(start, stop, step) , 2,0,-1 -> 2,1 
+  yilan[i].x = yilan[i-1].x # i = 2 → S2, S1’in eski pozisyonunu alır
+  yilan[i].y = yilan[i-1].y # i = 1 → S1, Head’in eski pozisyonunu alır
 
 # headi hareket ettirme
 yılan[0].hareket()
 
 # yem yendi mi?
-if yılan[0].x == food.x and yılan[0].y == food.y:
-  yılan.append(Snake(yılan[-1].x, yılan[-1].y)) # büyüme
+if yilan[0].x == food.x and yilan[0].y == food.y:
+  yilan.append(Snake(yilan[-1].x, yilan[-1].y)) # büyüme
   food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
 
 # hız
@@ -151,7 +151,7 @@ def ciz():
         satir += "." 
 
 # 6
-yılan = [Snake(width//2, height//2)]
+yilan = [Snake(width//2, height//2)]
 
 # 7
 food = Food()
@@ -180,8 +180,8 @@ while True:
   yilan[0].hareket()
 
   # kendine çarpma kontrolü
-  for parca in yılan[1:]:
-    if yilan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
+  for parca in yilan[1:]:
+    if yilan[0].x == parca.x and yilan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
       yilan = [Snake(width//2, height//2)]
       food.x, food.y = food.yeni_yem()
       break
