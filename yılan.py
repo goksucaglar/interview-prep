@@ -142,9 +142,9 @@ def ekran_temizle():
 # 5
 def ciz():
   ekran_temizle()
-  for y in range(height):
+  for y in range(height): # 1. döngü → her satır için
     satir = ""
-    for x in range(width):
+    for x in range(width): # 2. döngü → satır içindeki her karakter için
       if x == food.x and y == food.y:
         satir += "*"
       elif any(parca.x == x and parca.y == y for parca in yilan): # "Yılanın her bir parçasını kontrol et, bu (x,y) konumunda olan var mı?” Eğer varsa → bu karede yılan var demektir.
@@ -154,7 +154,8 @@ def ciz():
           satir += "#"  # gövde
       else:
         satir += "." 
-
+    print(satir)
+    
 # 6
 yilan = [Snake(width//2, height//2)]
 
