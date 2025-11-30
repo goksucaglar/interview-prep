@@ -102,7 +102,7 @@ import platform
 
 # alan boyutu 
 width = 60
-height = 60
+height = 30
 
 # 2
 class Snake:
@@ -122,8 +122,8 @@ class Food():
     self.x, self.y = self.yeni_yem()
     
   def yeni_yem(self):
-    self.x = random.randint(0, width-1)
-    self.y = random.randint(0, height-1)
+    self.x = random.randint(0, width - 1)
+    self.y = random.randint(0, height - 1)
     return self.x, self.y
     # return random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1)
 
@@ -135,14 +135,6 @@ def ekran_temizle():
     os.system("clear")
 
 # 5
-# kendine çarpma kontrolü
-for parca in yılan[1:]:
-  if yilan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
-    yilan = [Snake(width//2, height//2)]
-    food.x, food.y = food.yeni_yem()
-    break
-
-# 6
 def ciz():
   ekran_temizle()
   for y in range(height):
@@ -158,13 +150,13 @@ def ciz():
       else:
         satir += "." 
 
-# 7
+# 6
 yılan = [Snake(width//2, height//2)]
 
-# 8
+# 7
 food = Food()
 
-# 9
+# 8
 while True:
   if keyboard.is_pressed("w"):
     yilan[0].dx = 0
@@ -186,8 +178,15 @@ while True:
   
   # headi hareket ettirme
   yilan[0].hareket()
+
+  # kendine çarpma kontrolü
+  for parca in yılan[1:]:
+    if yilan[0].x == parca.x and yılan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
+      yilan = [Snake(width//2, height//2)]
+      food.x, food.y = food.yeni_yem()
+      break
   
-  # yem yendi mi?
+  # yem yeme
   if yilan[0].x == food.x and yilan[0].y == food.y:
     yilan.append(Snake(yilan[-1].x, yilan[-1].y)) # büyüme
     food.x, food.y = food.yeni_yem() # yem yeni rastgele konuma taşınır.
