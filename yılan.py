@@ -129,7 +129,7 @@ class Food():
   def yeni_yem(self):
     self.x = random.randint(0, width - 1)
     self.y = random.randint(0, height - 1)
-    return self.x, self.y
+    return self.x, self.y # returne gerek yok aslında
     # return random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1)
 
 # 4
@@ -189,7 +189,7 @@ while True:
   for parca in yilan[1:]:
     if yilan[0].x == parca.x and yilan[0].y == parca.y: # Eğer başın koordinatları bir gövde parçasının koordinatlarıyla aynıysa → çarpışma olmuş demektir, O zaman yılanı tek parça baştan başlatıyor ve yem yeni konuma taşınıyor
       yilan = [Snake(width//2, height//2)]
-      food.x, food.y = food.yeni_yem()
+      food.x, food.y = food.yeni_yem() # food.yeni_yem()
       break
   
   # yem yeme
