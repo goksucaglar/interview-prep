@@ -200,3 +200,5 @@ while True:
 # “İçindeki koşullardan en az biri doğruysa True döner.”
 # any([True, False, False]) Sonuç: True
 # any([False, False, False]) Sonuç: False
+
+# Bitiş 30.11.2025, 04:00, Pazar
