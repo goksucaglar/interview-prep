@@ -91,6 +91,11 @@ if yilan[0].x == food.x and yilan[0].y == food.y:
 # hız
 time.sleep(0.1)
 
+# any Python’da çok işe yarayan bir fonksiyondur ve anlamı tam olarak şudur:
+# “İçindeki koşullardan en az biri doğruysa True döner.”
+# any([True, False, False]) Sonuç: True
+# any([False, False, False]) Sonuç: False
+
 # TEMİZ KOD -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 1
@@ -195,10 +200,5 @@ while True:
 
   # hız
   time.sleep(0.1)
-
-# any Python’da çok işe yarayan bir fonksiyondur ve anlamı tam olarak şudur:
-# “İçindeki koşullardan en az biri doğruysa True döner.”
-# any([True, False, False]) Sonuç: True
-# any([False, False, False]) Sonuç: False
 
 # Bitiş 30.11.2025, 04:00, Pazar
