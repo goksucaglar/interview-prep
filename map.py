@@ -105,20 +105,28 @@ class Map:
     width = 16
     heigth = 16
 
-    cells = []
-    for x in liste(width):
+    self.cells = []
+    
+    for y in liste(heigth):
       row = []
-      for y in liste(height):
+      for x in liste(width):
         row.append(0)
-    cells.append(row)
+    self.cells.append(row)
 
 print(cells)
 
 # cells = [[0 for x in range(width)] for y in range(height)]
 
+m = Map()  # sınıftan bir nesne oluştur
+print(m.cells)   # o nesnenin içindeki 2D haritayı ekrana yaz
 
+class Robot:
+  def __init__(self, x, y, enegry):
+    self.x = x
+    self.y = y
+    self.energy = energy
 
-
+robot1 = Robot(0, 0, 100)
 
 
 
