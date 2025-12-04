@@ -101,8 +101,11 @@
 
 
 class Map:
-  width = 16
-  heigth = 16
+  def __init__(self):
+    width = 16
+    heigth = 16
+
+
 
 
 
