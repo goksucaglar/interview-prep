@@ -84,8 +84,25 @@
 # | Zaman gecikmesi   | `time` (opsiyonel)   |
 # | Grafik            | `pygame` (opsiyonel) |
 
+# 2D grid demek:
+# Satırlar ve sütunlardan oluşan bir tablo
+# Oyun haritaları, pathfinding haritaları hep böyle tutulur
+# Python’da bu yapı list of lists ile yapılır
+# Yani şöyle hayal et:
+
+# Bu tablo:
+# 0 → boş
+# 1 → engel
+# 2 → kaynak
+
+# [ [0,0,0,0],
+#   [0,1,0,2],
+#   [0,0,0,0] ]
 
 
+class Map:
+  width = 16
+  heigth = 16
 
 
 
