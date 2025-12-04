@@ -44,3 +44,62 @@
 
 # Bilgi al → karar ver → yol planla → uygulama → maliyet → sonuç kontrolü
 
+
+
+# 1) Önce haritayı yap
+# 2D grid
+# engel/kaynak ekleme
+# komşu kontrol fonksiyonu
+
+
+# 2) Sonra robot sınıfını boş olarak oluştur
+# Sadece:
+# x, y
+# energy
+
+# 3) Strateji sınıflarını boş olarak ekle
+# Her sınıfa sadece isim koy.
+
+# 4) Pathfinding’i ekle (A veya BFS)*
+# Test et → çalıştığından emin ol.
+
+# 5) Robotun hareketini pathfinding’e bağla
+# hedef seç
+# yol bul
+# hareket et
+
+# 6) Enerji ve kaynak toplama ekle
+
+# 7) Simülasyon döngüsünü bağla (main)
+
+# 9) Sonradan Eklenebilecek Şeyler
+# birden fazla strateji
+# engellerin hareket etmesi
+# görsel arayüz
+# farklı robot türleri
+
+# | Ne için?          | Kütüphane            |
+# | ----------------- | -------------------- |
+# | A* priority queue | `heapq`              |
+# | Zaman gecikmesi   | `time` (opsiyonel)   |
+# | Grafik            | `pygame` (opsiyonel) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
