@@ -105,6 +105,17 @@ class Map:
     width = 16
     heigth = 16
 
+    cells = []
+    for x in liste(width):
+      row = []
+      for y in liste(height):
+        row.append(0)
+    cells.append(row)
+
+print(cells)
+
+# cells = [[0 for x in range(width)] for y in range(height)]
+
 
 
 
