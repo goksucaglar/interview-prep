@@ -1,5 +1,4 @@
-# "Robot Koloni Simülasyonu - Pathfinding
-# + Strategy Al"
+# "Robot Koloni Simülasyonu - Pathfinding + Strategy Al"
 # Ödev Özeti
 # Bir 2D harita üzerinde yaşayan
 # robotlardan oluşan bir koloni simüle edeceksin.
