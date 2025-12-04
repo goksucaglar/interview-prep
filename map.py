@@ -125,8 +125,24 @@ class Robot:
     self.x = x
     self.y = y
     self.energy = energy
+    self.dx = 0 
+    self.dy = 0
+  def move(self):
+    self.dx += dx
+    self.dy += dy
 
 robot1 = Robot(0, 0, 100)
+robot1.move(1, 0) # sağa 
+robot1.move(0, 1) # aşağı
+
+# Artık
+# robot.x = 1
+# robot.y = 1
+
+print(robot1.x)
+print(robot1.y)
+print(robot1.energy)
+
 
 
 
