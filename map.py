@@ -130,6 +130,7 @@ class Robot:
   def move(self):
     self.dx += dx
     self.dy += dy
+    self.energy -= 1
 
 robot1 = Robot(0, 0, 100)
 robot1.move(1, 0) # sağa 
