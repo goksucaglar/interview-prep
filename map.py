@@ -103,13 +103,14 @@
 class Map:
   def __init__(self):
     self.width = width 
-    self.heigth = width
+    self.height = height
 
     # def __init__(self):
     # self.width = 16
     # self.height = 16 
     # böyle olduğunda world = Map() yazabilirsin
-
+    
+    # 2D liste (harita) oluştur
     self.cells = []
     
     # --- 2D HARİTA OLUŞTURMA ---
@@ -133,6 +134,7 @@ class Robot:
     self.energy = energy
     self.dx = 0 
     self.dy = 0
+    
   # dx, dy PARAMETRE olarak alınmalı
   def move(self, dx, dy):
     self.dx += dx
@@ -146,8 +148,6 @@ class Robot:
     if 0 <= new_y < self.height and 0 <= new_x < self.width:
       self.x = new_x
       self.y = new_y
-
-
 
 robot1 = Robot(0, 0, 100)
 robot1.move(1, 0) # sağa 
