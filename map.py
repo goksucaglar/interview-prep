@@ -121,13 +121,14 @@ m = Map()  # sınıftan bir nesne oluştur
 print(m.cells)   # o nesnenin içindeki 2D haritayı ekrana yaz
 
 class Robot:
-  def __init__(self, x, y, enegry):
+  def __init__(self, x, y, energy):
     self.x = x
     self.y = y
     self.energy = energy
     self.dx = 0 
     self.dy = 0
-  def move(self):
+  # dx, dy PARAMETRE olarak alınmalı
+  def move(self, dx, dy):
     self.dx += dx
     self.dy += dy
     self.energy -= 1
