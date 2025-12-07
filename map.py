@@ -187,11 +187,9 @@ class Map:
         row.append(0)             
       self.cells.append(row)         
 
-print(self.cells)
-
-  def add_obstacle(self, x, y):
-    if 0 <= y < self.height and 0 <= x < self.width:
-      self.cells[y][x] = 1
+    def add_obstacle(self, x, y):
+      if 0 <= y < self.height and 0 <= x < self.width:
+        self.cells[y][x] = 1
 
 world = Map(16, 16)  
 print(world.cells)   
@@ -223,7 +221,7 @@ class Robot:
     self.x = new_x
     self.y = new_y
 
-robot1 = Robot(0, 0, 100)
+robot1 = Robot(world, 0, 0, 100)
 robot1.move(1, 0) 
 robot1.move(0, 1) 
 
