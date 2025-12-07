@@ -110,7 +110,6 @@ class Map:
     # self.height = 16 
     # böyle olduğunda world = Map() yazabilirsin
 
-    
     self.cells = []
     
     # --- 2D HARİTA OLUŞTURMA ---
@@ -140,7 +139,13 @@ class Robot:
     self.dy += dy
     self.energy -= 1
 
-    if 0 < new_x < self.
+    new_x = self.x + self.dx
+    new_y = self.y + self.dy
+    
+    # sınır kontrolü
+    if 0 <= new_y < self.height and 0 <= new_x < self.width:
+      self.x = new_x
+      self.y = new_y
 
 
 
