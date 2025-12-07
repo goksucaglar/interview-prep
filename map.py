@@ -44,13 +44,10 @@
 
 # Bilgi al → karar ver → yol planla → uygulama → maliyet → sonuç kontrolü
 
-
-
 # 1) Önce haritayı yap
 # 2D grid
 # engel/kaynak ekleme
 # komşu kontrol fonksiyonu
-
 
 # 2) Sonra robot sınıfını boş olarak oluştur
 # Sadece:
@@ -99,7 +96,6 @@
 #   [0,1,0,2],
 #   [0,0,0,0] ]
 
-
 class Map:
   def __init__(self):
     self.width = width 
@@ -122,6 +118,10 @@ class Map:
 
 print(cells)
 
+  def add_obstacle(self, x, y):
+    if 0 <= y < self.height and 0 <= x < self.width:
+      self.cells[y][x] = 1
+
 # cells = [[0 for x in range(width)] for y in range(height)]
 
 world = Map(16, 16)  # sınıftan bir nesne oluştur
@@ -134,20 +134,29 @@ class Robot:
     self.energy = energy
     self.dx = 0 
     self.dy = 0
-    
+  
   # dx, dy PARAMETRE olarak alınmalı
   def move(self, dx, dy):
-    self.dx += dx
-    self.dy += dy
+    # self.dx += dx  sildik
+    # self.dy += dy  bu birikince çok hızlanır ve harita dışına çıkabilir, adım adım olduğu için sildik
     self.energy -= 1
 
-    new_x = self.x + self.dx
-    new_y = self.y + self.dy
-    
-    # sınır kontrolü
-    if 0 <= new_y < self.height and 0 <= new_x < self.width:
-      self.x = new_x
-      self.y = new_y
+    new_x = self.x + dx
+    new_y = self.y + dy
+
+     # sınır kontrolü
+    if not (0 <= new_y < self.world.height and 0 <= new_x < self.world.width):
+      print("Sınır dışı!")
+      return
+
+    if self.world.cells[new_y][new_x] == 1:
+      print("Engel var.")
+      return
+
+    self.x = new_x
+    self.y = new_y
+   
+      
 
 robot1 = Robot(0, 0, 100)
 robot1.move(1, 0) # sağa 
