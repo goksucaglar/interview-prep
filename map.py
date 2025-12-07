@@ -102,23 +102,30 @@
 
 class Map:
   def __init__(self):
-    width = 16
-    heigth = 16
+    self.width = width 
+    self.heigth = width
 
+    # def __init__(self):
+    # self.width = 16
+    # self.height = 16 
+    # böyle olduğunda world = Map() yazabilirsin
+
+    
     self.cells = []
     
-    for y in liste(heigth):
-      row = []
-      for x in liste(width):
-        row.append(0)
-    self.cells.append(row)
+    # --- 2D HARİTA OLUŞTURMA ---
+    for y in range liste(height):  # her SATIR için
+      row = []                     # yeni bir satır listesi oluştur
+      for x in range liste(width): # her SÜTUN için
+        row.append(0)              # 0 ekle (boş hücre)
+    self.cells.append(row)         # satırı haritaya ekle
 
 print(cells)
 
 # cells = [[0 for x in range(width)] for y in range(height)]
 
-m = Map()  # sınıftan bir nesne oluştur
-print(m.cells)   # o nesnenin içindeki 2D haritayı ekrana yaz
+world = Map(16, 16)  # sınıftan bir nesne oluştur
+print(world.cells)   # o nesnenin içindeki 2D haritayı ekrana yaz
 
 class Robot:
   def __init__(self, x, y, energy):
@@ -132,6 +139,10 @@ class Robot:
     self.dx += dx
     self.dy += dy
     self.energy -= 1
+
+    if 0 < new_x < self.
+
+
 
 robot1 = Robot(0, 0, 100)
 robot1.move(1, 0) # sağa 
