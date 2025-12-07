@@ -116,7 +116,7 @@ class Map:
         row.append(0)              # 0 ekle (boş hücre)
       self.cells.append(row)         # satırı haritaya ekle
 
-print(cells)
+print(self.cells)
 
   def add_obstacle(self, x, y):
     if 0 <= y < self.height and 0 <= x < self.width:
@@ -171,6 +171,65 @@ print(robot1.x)
 print(robot1.y)
 print(robot1.energy)
 
+
+# TEMİZ KOD --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class Map:
+  def __init__(self, width, height):
+    self.width = width 
+    self.height = height
+  
+    self.cells = []
+    
+    for y in range(height):  
+      row = []                     
+      for x in range(width): 
+        row.append(0)             
+      self.cells.append(row)         
+
+print(self.cells)
+
+  def add_obstacle(self, x, y):
+    if 0 <= y < self.height and 0 <= x < self.width:
+      self.cells[y][x] = 1
+
+world = Map(16, 16)  
+print(world.cells)   
+
+class Robot:
+  def __init__(self, world, x, y, energy):
+    self.world = world
+    self.x = x
+    self.y = y
+    self.energy = energy
+    self.dx = 0 
+    self.dy = 0
+  
+  def move(self, dx, dy):
+    self.energy -= 1
+
+    new_x = self.x + dx
+    new_y = self.y + dy
+
+     
+    if not (0 <= new_y < self.world.height and 0 <= new_x < self.world.width):
+      print("Sınır dışı!")
+      return
+
+    if self.world.cells[new_y][new_x] == 1:
+      print("Engel var.")
+      return
+
+    self.x = new_x
+    self.y = new_y
+
+robot1 = Robot(0, 0, 100)
+robot1.move(1, 0) 
+robot1.move(0, 1) 
+
+print(robot1.x)
+print(robot1.y)
+print(robot1.energy)
 
 
 
