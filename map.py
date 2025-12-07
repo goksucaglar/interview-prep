@@ -187,9 +187,9 @@ class Map:
         row.append(0)             
       self.cells.append(row)         
 
-    def add_obstacle(self, x, y):
-      if 0 <= y < self.height and 0 <= x < self.width:
-        self.cells[y][x] = 1
+  def add_obstacle(self, x, y):
+    if 0 <= y < self.height and 0 <= x < self.width:
+      self.cells[y][x] = 1
 
 world = Map(16, 16)  
 print(world.cells)   
