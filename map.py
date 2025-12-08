@@ -220,12 +220,12 @@ class Robot:
     self.dx = 0 
     self.dy = 0
 
-   def check_cell(self):
-      value = self.world.cells[self.y][self.x]
-      if value == 2:
-        print("Kaynak bulundu, toplanıyor.")
-        self.world.cells[self.y][self.x] = 0
-        self.energy += 5
+  def check_cell(self):
+    value = self.world.cells[self.y][self.x]
+    if value == 2:
+      print("Kaynak bulundu, toplanıyor.")
+      self.world.cells[self.y][self.x] = 0
+      self.energy += 5
   
   def move(self, dx, dy):
     self.energy -= 1
