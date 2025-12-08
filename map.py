@@ -249,7 +249,7 @@ class Robot:
     self.x = new_x
     self.y = new_y
 
-    self.check_cells()
+    self.check_cell()
 
 robot1 = Robot(world, 0, 0, 100)
 robot1.move(1, 0) 
