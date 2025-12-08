@@ -116,12 +116,10 @@ class Map:
         row.append(0)              # 0 ekle (boş hücre)
       self.cells.append(row)         # satırı haritaya ekle
 
-print(self.cells)
-
   def add_obstacle(self, x, y):
     if 0 <= y < self.height and 0 <= x < self.width:
       self.cells[y][x] = 1
-
+  
   def add_resource(self, x, y):
     if 0 <= y < self.height and 0 <= x < self.width:
       self.cells[y][x] = 2
@@ -139,6 +137,18 @@ class Robot:
     self.energy = energy
     self.dx = 0 
     self.dy = 0
+
+  def check_cell(self):
+      value = self.world.cells[self.y][self.x]
+        # Eğer robotun altında “boş” varsa → value = 0
+        # Engelse → value = 1
+        # Kaynaksa → value = 2
+      if value == 2:
+        print("Kaynak bulundu, toplanıyor.")
+        self.world.cells[self.y][self.x] = 0
+        self.energy += 5
+         # Robot hareket edince enerji harcıyor (-1)
+         # Kaynak bulunca enerji kazanıyor (+5)
   
   # dx, dy PARAMETRE olarak alınmalı
   def move(self, dx, dy):
@@ -160,7 +170,7 @@ class Robot:
 
     self.x = new_x
     self.y = new_y
-   
+
 robot1 = Robot(world, 0, 0, 100)
 robot1.move(1, 0) # sağa 
 robot1.move(0, 1) # aşağı
@@ -172,18 +182,6 @@ robot1.move(0, 1) # aşağı
 print(robot1.x)
 print(robot1.y)
 print(robot1.energy)
-
-     def check_cell(self):
-       value = self.world.cells[self.y][self.x]
-        # Eğer robotun altında “boş” varsa → value = 0
-        # Engelse → value = 1
-        # Kaynaksa → value = 2
-       if value == 2:
-         print("Kaynak bulundu, toplanıyor.")
-         self.world.cells[self.y][self.x] = 0
-         self.energy += 5
-         # Robot hareket edince enerji harcıyor (-1)
-         # Kaynak bulunca enerji kazanıyor (+5)
 
 
     
@@ -221,13 +219,19 @@ class Robot:
     self.energy = energy
     self.dx = 0 
     self.dy = 0
+
+   def check_cell(self):
+      value = self.world.cells[self.y][self.x]
+      if value == 2:
+        print("Kaynak bulundu, toplanıyor.")
+        self.world.cells[self.y][self.x] = 0
+        self.energy += 5
   
   def move(self, dx, dy):
     self.energy -= 1
 
     new_x = self.x + dx
     new_y = self.y + dy
-
      
     if not (0 <= new_y < self.world.height and 0 <= new_x < self.world.width):
       print("Sınır dışı!")
