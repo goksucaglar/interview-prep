@@ -208,8 +208,13 @@ class Map:
     if 0 <= y < self.height and 0 <= x < self.width:
       self.cells[y][x] = 1
 
+  def add_resource(self, x, y):
+    if 0 <= y < self.height and 0 <= x < self.width:
+      self.cells[y][x] = 2
+
 world = Map(16, 16)  
 print(world.cells)   
+
 
 class Robot:
   def __init__(self, world, x, y, energy):
@@ -244,9 +249,13 @@ class Robot:
     self.x = new_x
     self.y = new_y
 
+    self.check_cells()
+
 robot1 = Robot(world, 0, 0, 100)
 robot1.move(1, 0) 
 robot1.move(0, 1) 
+
+world.add_resource(1,1)
 
 print(robot1.x)
 print(robot1.y)
