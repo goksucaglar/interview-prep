@@ -173,17 +173,17 @@ print(robot1.x)
 print(robot1.y)
 print(robot1.energy)
 
-   def check_cell(self):
-     value = self.world.cells[self.y][self.x]
-      # Eğer robotun altında “boş” varsa → value = 0
-      # Engelse → value = 1
-      # Kaynaksa → value = 2
-     if value == 2:
-       print("Kaynak bulundu, toplanıyor.")
-       self.world.cells[self.y][self.x] = 0
-       self.energy += 5
-       # Robot hareket edince enerji harcıyor (-1)
-       # Kaynak bulunca enerji kazanıyor (+5)
+     def check_cell(self):
+       value = self.world.cells[self.y][self.x]
+        # Eğer robotun altında “boş” varsa → value = 0
+        # Engelse → value = 1
+        # Kaynaksa → value = 2
+       if value == 2:
+         print("Kaynak bulundu, toplanıyor.")
+         self.world.cells[self.y][self.x] = 0
+         self.energy += 5
+         # Robot hareket edince enerji harcıyor (-1)
+         # Kaynak bulunca enerji kazanıyor (+5)
 
 
     
