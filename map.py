@@ -122,6 +122,10 @@ print(self.cells)
     if 0 <= y < self.height and 0 <= x < self.width:
       self.cells[y][x] = 1
 
+  def add_resource(self, x, y):
+    if 0 <= y < self.height and 0 <= x < self.width:
+      self.cells[y][x] = 2
+
 # cells = [[0 for x in range(width)] for y in range(height)]
 
 world = Map(16, 16)  # sınıftan bir nesne oluştur
@@ -157,8 +161,6 @@ class Robot:
     self.x = new_x
     self.y = new_y
    
-      
-
 robot1 = Robot(0, 0, 100)
 robot1.move(1, 0) # sağa 
 robot1.move(0, 1) # aşağı
@@ -170,6 +172,23 @@ robot1.move(0, 1) # aşağı
 print(robot1.x)
 print(robot1.y)
 print(robot1.energy)
+
+   def check_cell(self):
+     value = self.world.cells[self.y][self.x]
+      # Eğer robotun altında “boş” varsa → value = 0
+      # Engelse → value = 1
+      # Kaynaksa → value = 2
+     if value == 2:
+       print("Kaynak bulundu, toplanıyor.")
+       self.world.cells[self.y][self.x] = 0
+       self.energy += 5
+       # Robot hareket edince enerji harcıyor (-1)
+       # Kaynak bulunca enerji kazanıyor (+5)
+
+
+    
+    
+    
 
 
 # TEMİZ KOD --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
