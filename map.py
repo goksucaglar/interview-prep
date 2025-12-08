@@ -161,7 +161,7 @@ class Robot:
     self.x = new_x
     self.y = new_y
    
-robot1 = Robot(0, 0, 100)
+robot1 = Robot(world, 0, 0, 100)
 robot1.move(1, 0) # sağa 
 robot1.move(0, 1) # aşağı
 
