@@ -264,7 +264,21 @@ print(robot1.x, robot1.y, robot1.energy)
 robot1.move(1,0) # (2,1) - boş, hareket etmeli
 print(robot1.x, robot1.y, robot1.energy)
 
-
+  def look_cell(self, world, x, y,):
+    right_x = self.x + 1
+    right_y = self.y
+ 
+    if (0 <= right_y < self.world.height and 0 <= right_x < self.world.width): #elif den sonra asla return gelmez 
+      value = self.world.cells[y][x]
+      if value == 0:
+        print(value)
+      elif value == 1:
+        print(value)
+      elif value == 2:
+        print(value)
+        return
+        
+      
 
 
 
