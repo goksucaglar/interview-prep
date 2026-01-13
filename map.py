@@ -268,14 +268,11 @@ print(robot1.x, robot1.y, robot1.energy)
     right_x = self.x + 1
     right_y = self.y
  
-    if (0 <= right_y < self.world.height and 0 <= right_x < self.world.width): #elif den sonra asla return gelmez 
-      value = self.world.cells[y][x]
+    if (0 <= right_y < self.world.height and 0 <= right_x < self.world.width): 
+      value = self.world.cells[right_y][right_x]
       if value == 0:
-        print(value)
       elif value == 1:
-        print(value)
       elif value == 2:
-        print(value)
         return
         
       
