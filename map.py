@@ -264,12 +264,29 @@ print(robot1.x, robot1.y, robot1.energy)
 robot1.move(1,0) # (2,1) - boş, hareket etmeli
 print(robot1.x, robot1.y, robot1.energy)
 
-  def look_cell(self):
-    right_x = self.x + 1
-    right_y = self.y
+  def look_cell(self, direction):
+    dx = 0
+    dy = 0
+    
+    if direction  == "right":
+      dx = 1
+    elif direction == "left":
+      dx = -1
+    elif direction == "up":
+      dy = -1
+    elif direction == "down":
+      dy = 1
+
+    # liste[0] → üst
+    # liste[1] → orta
+    # liste[2] → alt
+    # bu yüzden yukarı cıktıkca azalır -1 
+
+    new_x = self.x + dx
+    new_y = self.y + dy
  
-    if (0 <= right_y < self.world.height and 0 <= right_x < self.world.width): 
-      value = self.world.cells[right_y][right_x]
+    if (0 <= new_y < self.world.height and 0 <= new_x < self.world.width): 
+      value = self.world.cells[new_y][new_x]
       if value == 0:
         return "boş"
       elif value == 1:
