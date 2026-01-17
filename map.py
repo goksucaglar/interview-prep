@@ -232,7 +232,7 @@ class Robot:
       self.world.cells[self.y][self.x] = 0
       self.energy += 5
   
-  def move_dxdy(self, dx, dy):
+  def _move_dxdy(self, dx, dy): # _ Bu fonksiyon sınıfın iç işi, dışarıdan kullanma. __ daha gizli 
     self.energy -= 1
 
     new_x = self.x + dx
@@ -299,7 +299,7 @@ class Robot:
     elif direction == "down":
       dy = 1
 
-    self.move_dxdy(dx,dy)
+    self._move_dxdy(dx,dy)
 
 
 world.add_resource(1,1)
