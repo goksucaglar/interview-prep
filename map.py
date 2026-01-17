@@ -301,7 +301,6 @@ class Robot:
 
     self._move_dxdy(dx,dy)
 
-
 world.add_resource(1,1)
 world.add_obstacle(2,0)
 world.add_obstacle(3,0)
