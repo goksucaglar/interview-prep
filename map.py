@@ -232,7 +232,7 @@ class Robot:
       self.world.cells[self.y][self.x] = 0
       self.energy += 5
   
-  def move(self, dx, dy):
+  def move_dxdy(self, dx, dy):
     self.energy -= 1
 
     new_x = self.x + dx
@@ -250,19 +250,6 @@ class Robot:
     self.y = new_y
 
     self.check_cell()
-
-
-world.add_resource(1,1)
-world.add_obstacle(2,0)
-world.add_obstacle(3,0)
-
-robot1 = Robot(world, 0, 0, 100)
-robot1.move(1, 0) # (1,0) - boş, hareket etmeli
-print(robot1.x, robot1.y, robot1.energy)
-robot1.move(0, 1) # (1,1) - engel var, hareket etmeyecek
-print(robot1.x, robot1.y, robot1.energy)
-robot1.move(1,0) # (2,1) - boş, hareket etmeli
-print(robot1.x, robot1.y, robot1.energy)
 
   def look_cell(self, direction):
     dx = 0
@@ -295,6 +282,40 @@ print(robot1.x, robot1.y, robot1.energy)
         return "kaynak"
     else:
       return "sınır dışı"
+
+  def move(self, direction):
+    result = self.look_cell(direction)
+
+    if result == "engel" or result == "sınır dışı":
+      print("Hareket Edemem: ", result)
+      return
+
+    if direction == "right":
+      dx = 1
+    elif direction == "left":
+      dx = -1
+    elif direction == "up":
+      dy = -1
+    elif direction == "down":
+      dy = 1
+
+    self.move_dxdy(dx,dy)
+
+
+world.add_resource(1,1)
+world.add_obstacle(2,0)
+world.add_obstacle(3,0)
+
+robot1 = Robot(world, 0, 0, 100)
+robot1.move(1, 0) # (1,0) - boş, hareket etmeli
+print(robot1.x, robot1.y, robot1.energy)
+robot1.move(0, 1) # (1,1) - engel var, hareket etmeyecek
+print(robot1.x, robot1.y, robot1.energy)
+robot1.move(1,0) # (2,1) - boş, hareket etmeli
+print(robot1.x, robot1.y, robot1.energy)
+
+  
+  
         
       
 
