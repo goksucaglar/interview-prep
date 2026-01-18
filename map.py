@@ -310,7 +310,7 @@ robot1.move(1, 0) # (1,0) - boş, hareket etmeli
 print(robot1.x, robot1.y, robot1.energy)
 robot1.move(0, 1) # (1,1) - engel var, hareket etmeyecek
 print(robot1.x, robot1.y, robot1.energy)
-robot1.move(1,0) # (2,1) - boş, hareket etmeli
+robot1.move(1,0) # (2,1) - boş, hareket etmeli 
 print(robot1.x, robot1.y, robot1.energy)
 
   
